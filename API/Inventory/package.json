@@ -14,7 +14,7 @@
     "babel-cli": "6.26.0"
   },
   "scripts": {
-    "dev": "babel-node server.js",
+    "dev": "babel-node src/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

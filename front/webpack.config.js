@@ -13,8 +13,22 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+          presets: ['@babel/preset-env', '@babel/preset-react']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            }
+          },
+          'postcss-loader',
+          'sass-loader',
+        ]
       }
     ]
   }
