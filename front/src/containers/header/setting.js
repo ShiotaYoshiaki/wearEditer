@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-// import * as settingModule from '../../modules/common/settingAction';
-import setting from '../../components/common/setting';
+// import * as settingModule from '../../modules/header/settingAction';
+import setting from '../../components/header/setting';
 
 
 function mapStateToProps(state) {

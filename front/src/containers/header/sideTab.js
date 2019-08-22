@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import * as sideTabModule from '../../modules/common/sideTabAction';
-import sideTab from '../../components/common/sideTab';
+import sideTab from '../../components/header/sideTab';
 
 
 function mapStateToProps(state) {

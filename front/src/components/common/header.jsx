@@ -1,7 +1,7 @@
 import React from 'react';
-import Account from '../../containers/common/account';
-import Setting from '../../containers/common/setting';
-import SideTab from '../../containers/common/sideTab';
+import Account from '../../containers/header/account';
+import Setting from '../../containers/header/setting';
+import SideTab from '../../containers/header/sideTab';
 
 export default class Counter extends React.Component {
 

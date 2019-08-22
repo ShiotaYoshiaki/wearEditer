@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-// import * as accountModule from '../../modules/common/accountAction';
-import account from '../../components/common/account';
+// import * as accountModule from '../../modules/header/accountAction';
+import account from '../../components/header/account';
 
 
 function mapStateToProps(state) {
