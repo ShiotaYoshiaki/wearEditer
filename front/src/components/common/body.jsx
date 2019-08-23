@@ -9,7 +9,6 @@ export default class Body extends React.Component {
     const { openSideMenu, openSetting, header } = this.props;
     return (
       <BodyDiv>
-        <Counter />
         <ItemList />
       </BodyDiv>
     );
