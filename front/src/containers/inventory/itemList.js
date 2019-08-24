@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import * as itemListModule from '../../modules/common/itemListAction';
+import * as itemListAction from '../../modules/inventory/itemListAction';
 import itemList from '../../components/inventory/itemList';
 
 
@@ -11,8 +11,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    // openSideMenu: () => dispatch(itemListModule.openSideMenu()),
-    // openitemList: () => dispatch(itemListModule.openItem()),
+    changeToListView: () => dispatch(itemListAction.changeToListView()),
+    changeToGridView: () => dispatch(itemListAction.changeToGridView()),
+    loadImageContentList: () => dispatch(itemListAction.loadImageContentList()),
+    // openSideMenu: () => dispatch(itemListAction.openSideMenu()),
+    // openitemList: () => dispatch(itemListAction.openItem()),
   }
 }
 

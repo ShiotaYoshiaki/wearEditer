@@ -1,7 +1,7 @@
 import React from 'react';
 import sideMenuImage from '../../style/image/sideMenu.svg';
 
-export default class Counter extends React.Component {
+export default class SideTab extends React.Component {
 
   render() {
     const { openSideTab } = this.props;

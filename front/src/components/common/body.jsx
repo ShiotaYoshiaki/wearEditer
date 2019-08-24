@@ -1,5 +1,4 @@
 import React from 'react';
-import Counter from '../../containers/Counter';
 import ItemList from '../../containers/inventory/itemList';
 import { BodyDiv } from '../../style/common/body';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import gearImage from '../../style/image/gear.svg';
 
-export default class Counter extends React.Component {
+export default class Setting extends React.Component {
 
   render() {
     const { openSetting } = this.props;

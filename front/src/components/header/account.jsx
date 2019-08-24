@@ -1,7 +1,7 @@
 import React from 'react';
 import defaultAccountImage from '../../style/image/defaultAccount.svg';
 
-export default class Counter extends React.Component {
+export default class Account extends React.Component {
 
   render() {
     const { openAccount, account } = this.props;

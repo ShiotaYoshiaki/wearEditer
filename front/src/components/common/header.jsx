@@ -5,7 +5,7 @@ import SideTab from '../../containers/header/sideTab';
 import Title from '../../containers/header/title'
 import { HeaderDiv } from '../../style/common/header';
 
-export default class Counter extends React.Component {
+export default class Header extends React.Component {
 
   render() {
     const { openSideMenu, openSetting, header } = this.props;
