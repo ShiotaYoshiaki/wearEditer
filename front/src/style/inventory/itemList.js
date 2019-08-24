@@ -15,6 +15,7 @@ export const ItemTitle = styled.td`
   border: solid 2px #fff;
   color: white;
   padding: 10px 0;
+  color: #4B0082;
 `;
 
 export const ItemData = styled.th`
@@ -24,7 +25,7 @@ color: white;
 padding: 10px 0;
 `;
 
-export const ItemContentList = styled.div`
+export const ItemContentListDiv = styled.div`
   right: 0;
   left: 0;
 `;

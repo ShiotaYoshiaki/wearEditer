@@ -35,6 +35,17 @@ function stubImageList() {
         "name": "BEAMS",
         "url": "https://www.beams.co.jp/"
       },
+    },
+    {
+      "isDeleted": false,
+      "isPublic": true,
+      "tag": "",
+      "itemId": '777888#2017-03-22T00:00:00.000Z',
+      "data": "",
+      "shop": {
+        "name": "",
+        "url": ""
+      },
     }
   ]
 }

@@ -1,29 +1,27 @@
 import { createStore as reduxCreateStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
-import counterReducer from './CounterReducer';
 import headerReducer from './common/headerReducer';
 import itemListReducer from './inventory/itemListReducer';
-import createSaga from 'redux-saga';
-import CounterController from '../controllers/CounterController';
+import createSagaMiddleware from 'redux-saga';
 import ItemListController from '../controllers/inventory/itemListController';
+import rootSaga from '../controllers/rootSaga';
+
+const sagaMiddleware = createSagaMiddleware();
 
 export default function createStore() {
-  const saga = createSaga();
+  // const saga = createSaga();
   const store = reduxCreateStore(
     combineReducers({
-      counter: counterReducer,
       header: headerReducer,
       itemList: itemListReducer,
     }),
     applyMiddleware(
       logger,
-      saga,
+      // saga,
+      sagaMiddleware
     ),
   );
-  saga.run(
-    ItemListController,
-    CounterController,
-  )
+  sagaMiddleware.run(rootSaga)
 
   return store;
 }
