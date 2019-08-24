@@ -1,5 +1,7 @@
-export const OPEN_SIDE_MENU = 'OPEN_SIDE_MENU';
+export const OPEN_SIDE_TAB = 'OPEN_SIDE_TAB';
+export const CLOSE_SIDE_TAB = 'CLOSE_SIDE_TAB';
 export const OPEN_SETTING = 'OPEN_SETTING';
+export const CLOSE_SETTING = 'CLOSE_SETTING';
 
 /** header */
 export const REQUEST_ACCOUNT_INFO = 'REQUEST_ACCOUNT_INFO';

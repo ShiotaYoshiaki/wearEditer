@@ -1,7 +1,7 @@
-import { OPEN_SETTING, OPEN_SIDE_MENU, REQUEST_ACCOUNT_INFO } from "../../constants/actionTypes";
+import { OPEN_SETTING, OPEN_SIDE_TAB, REQUEST_ACCOUNT_INFO } from "../../constants/actionTypes";
 
-export function openSideMenu(TEST) {
-  return { type: OPEN_SIDE_MENU, payload: TEST };
+export function openSideTab(TEST) {
+  return { type: OPEN_SIDE_TAB, payload: TEST };
 }
 
 export function openSetting() {

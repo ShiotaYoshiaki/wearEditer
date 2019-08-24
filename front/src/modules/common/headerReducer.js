@@ -1,4 +1,4 @@
-import { OPEN_SIDE_MENU, OPEN_SETTING, COMPLETE_ACCOUNT_INFO } from "../../constants/actionTypes";
+import { OPEN_SETTING } from "../../constants/actionTypes";
 
 const initialState = {
   state: 0,
@@ -16,12 +16,12 @@ export default function reducer(state = initialState, action) {
         content,
       };
 
-    case OPEN_SIDE_MENU:
-      content.isSideOpen = true;
-      return {
-        ...state,
-        content,
-      };
+    // case OPEN_SIDE_TAB:
+    //   content.isSideOpen = true;
+    //   return {
+    //     ...state,
+    //     content,
+    //   };
 
     default:
       return state;

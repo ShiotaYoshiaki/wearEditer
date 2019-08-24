@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import * as sideTabModule from '../../modules/common/sideTabAction';
-import sideTab from '../../components/header/sideTab';
+// import * as sideTabModule from '../../modules/common/sideTabAction';
+import sideTab from '../../components/common/sideTab';
 
 
 function mapStateToProps(state) {
@@ -11,8 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    openSideTab: () => dispatch(sideTabModule.openSideTab()),
-    closeSideTab: () => dispatch(sideTabModule.closeSideTab()),
+    // openSideTab: () => dispatch(sideTabModule.openSideTab()),
+    // openSideTab: () => dispatch(sideTabModule.openSideTab()),
   }
 }
 

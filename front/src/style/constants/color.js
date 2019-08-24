@@ -1,0 +1,1 @@
+export const COLOR_SIDE_TAB = 'lightgrey';

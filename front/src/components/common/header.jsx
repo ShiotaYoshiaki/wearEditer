@@ -13,7 +13,7 @@ export default class Header extends React.Component {
   }
 
   render() {
-    const { openSideMenu, openSetting, header } = this.props;
+    const { openSideTab, openSetting, header } = this.props;
     return (
       <HeaderDiv>
         <SideTab />

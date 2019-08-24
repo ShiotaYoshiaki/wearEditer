@@ -10,3 +10,10 @@ export const LOADING = {
     M: 'Loading...',
     L: 'LOADING...',
 }
+
+export const MENU = {
+    INVENTORY: 'INVENTORY',
+    AUTO_COORDINATE: 'AUTO COORDINATE',
+    HISTORY: 'HISTORY',
+    MY_BAR_CODE: 'MY BAR CODE',
+}

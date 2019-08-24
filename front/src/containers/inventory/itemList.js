@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
     changeToListView: () => dispatch(itemListAction.changeToListView()),
     changeToGridView: () => dispatch(itemListAction.changeToGridView()),
     loadImageContentList: () => dispatch(itemListAction.loadImageContentList()),
-    // openSideMenu: () => dispatch(itemListAction.openSideMenu()),
+    // openSideTab: () => dispatch(itemListAction.openSideTab()),
     // openitemList: () => dispatch(itemListAction.openItem()),
   }
 }

@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    openSideMenu: () => dispatch(headerModule.openSideMenu()),
+    openSideTab: () => dispatch(headerModule.openSideTab()),
     openSetting: () => dispatch(headerModule.openSetting()),
     loadAccountInfo: () => dispatch(headerModule.loadAccountInfo()),
   }
