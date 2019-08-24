@@ -15,3 +15,10 @@ export const GridDisplayImg = styled.img`
 export const ListDisplayImg = styled.img`
   height: 50px;
 `;
+
+export const HeaderAccountImg = styled.img`
+  height: 40px;
+  bottom: 5px;
+  position: absolute;
+  left: 5px;
+`;

@@ -7,6 +7,11 @@ import { HeaderDiv } from '../../style/common/header';
 
 export default class Header extends React.Component {
 
+  componentWillMount() {
+    const { loadAccountInfo } = this.props;
+    loadAccountInfo();
+  }
+
   render() {
     const { openSideMenu, openSetting, header } = this.props;
     return (

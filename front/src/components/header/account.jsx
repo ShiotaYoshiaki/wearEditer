@@ -1,17 +1,22 @@
 import React from 'react';
 import defaultAccountImage from '../../style/image/defaultAccount.svg';
+import { HeaderAccountImg } from '../../style/parts/img';
+import { HeaderAccountDiv, HeaderAccountNameDiv } from '../../style/common/header';
+import { HeaderAccountButton } from '../../style/parts/button';
 
 export default class Account extends React.Component {
 
   render() {
     const { openAccount, account } = this.props;
     return (
-      <div style={{ position: "absolute", right: "100px" }}>
-        <button onClick={openAccount} >
-          <img src={defaultAccountImage} style={{ width: "40px", height: "40px" }} />
-          {account.account_name}
-        </button>
-      </div>
+      <HeaderAccountDiv>
+        <HeaderAccountButton onClick={openAccount} >
+          <HeaderAccountImg src={defaultAccountImage} />
+          <HeaderAccountNameDiv>
+            {account.basic.account_name}
+          </HeaderAccountNameDiv>
+        </HeaderAccountButton>
+      </HeaderAccountDiv>
     );
   }
 }

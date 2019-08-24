@@ -1,6 +1,6 @@
 import React from 'react';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
-import { HOW_TO_DISPLAY } from '../../constants/parameter';
+import { HOW_TO_DISPLAY, LOADING } from '../../constants/parameter';
 import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
@@ -77,7 +77,7 @@ export default class ItemList extends React.Component {
   render() {
     const { changeToGridView, changeToListView, itemList } = this.props;
     console.log('-------------itemList'); console.log(itemList);
-    if (!itemList.itemList) return 'loading';
+    if (!itemList.itemList) return LOADING.S;
     return (
       <div>
         <div>
