@@ -35,8 +35,6 @@ export default class ItemList extends React.Component {
 
   createItemGrid(itemList) {
     const contentList = itemList.itemList.map(item => {
-      const { isPublic, tag, data, shop } = item;
-      const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
         <ItemGridImg src={image} alt="" />
       );
@@ -76,7 +74,6 @@ export default class ItemList extends React.Component {
 
   render() {
     const { changeToGridView, changeToListView, itemList } = this.props;
-    console.log('-------------itemList'); console.log(itemList);
     if (!itemList.itemList) return LOADING.S;
     return (
       <div>
