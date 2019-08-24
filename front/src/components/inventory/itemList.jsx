@@ -1,6 +1,7 @@
 import React from 'react';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
 import { HOW_TO_DISPLAY, LOADING } from '../../constants/parameter';
+import DetailModal from '../../containers/inventory/detailModal';
 import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
@@ -87,8 +88,8 @@ export default class ItemList extends React.Component {
         </div>
         <ItemContentListDiv>
           {this.createContents(itemList)}
-
         </ItemContentListDiv>
+        <DetailModal />
       </div>
     );
   }
