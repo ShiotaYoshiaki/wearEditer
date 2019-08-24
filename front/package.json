@@ -23,7 +23,8 @@
     "babel-preset-react": "6.24.1",
     "webpack": "4.29.6",
     "webpack-cli": "2.0.14",
-    "webpack-dev-server": "3.2.1"
+    "webpack-dev-server": "3.2.1",
+    "styled-components": "4.3.2"
   },
   "scripts": {
     "dev": "babel-node server.js",

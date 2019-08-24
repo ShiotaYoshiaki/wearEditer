@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './style/App.css';
-import Counter from './containers/Counter';
+import Header from './containers/common/header';
+import Body from './containers/common/body';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Counter />
+        <Header />
+        <Body />
       </div>
     );
   }
