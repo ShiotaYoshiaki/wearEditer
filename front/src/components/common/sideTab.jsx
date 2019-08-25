@@ -12,6 +12,9 @@ export default class SideTab extends React.Component {
       <SideTabDiv>
         <SideTabButton />
         <SideMenuDiv>
+          {MENU.TOP}
+        </SideMenuDiv>
+        <SideMenuDiv>
           {MENU.INVENTORY}
         </SideMenuDiv>
         <SideMenuDiv>
