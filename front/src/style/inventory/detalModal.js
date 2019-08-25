@@ -17,7 +17,7 @@ export const DetailModalDiv= styled.div`
   height: 80%;
   width: 80%;
   position: fixed;
-  z-index: 10;
+  z-index: 30;
   top: 0;
   bottom: 0;
   left: 0;
@@ -28,12 +28,14 @@ export const DetailModalDiv= styled.div`
   border-radius: 12px;
 `;
 
-const titleHeight = 50;
+const titleHeight = 40;
 export const ModalTitleDiv = styled.div`
   border-bottom: solid 4px black;
   height: ${titleHeight}px;
   line-height: ${titleHeight}px;
   margin-left: 1%;
   margin-right: 1%;
+  padding-left: 15px;
+  text-align: left;
 `;
 

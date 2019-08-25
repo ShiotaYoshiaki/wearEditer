@@ -17,3 +17,7 @@ export const MENU = {
     HISTORY: 'HISTORY',
     MY_BAR_CODE: 'MY BAR CODE',
 }
+
+export const MODAL = {
+    ITEM_DETAIL: 'ITEM DETAIL',
+}

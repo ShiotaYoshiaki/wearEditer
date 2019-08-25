@@ -22,3 +22,9 @@ export const HeaderAccountImg = styled.img`
   position: absolute;
   left: 5px;
 `;
+
+export const ModalCloseImg = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+

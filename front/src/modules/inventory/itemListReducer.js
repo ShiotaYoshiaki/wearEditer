@@ -1,11 +1,14 @@
-import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST } from "../../constants/actionTypes";
+import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL } from "../../constants/actionTypes";
 import { HOW_TO_DISPLAY } from "../../constants/parameter";
 
 const initialState = {
-  howToDisplay:  HOW_TO_DISPLAY.LIST,
+  howToDisplay: HOW_TO_DISPLAY.LIST,
+  modal: {
+    isOpen: false,
+  },
 }
 
-export default function reducer(state=initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_TO_GRID_VIEW:
       return {
@@ -22,7 +25,24 @@ export default function reducer(state=initialState, action) {
     case COMPLETE_LOAD_ITEM_CONTENT_LIST:
       return {
         ...state,
-        itemList: action.action.payload,
+        list: action.action.payload,
+      }
+
+    case OPEN_ITEM_DETAIL_MODAL:
+      return {
+        ...state,
+        modal: {
+          isOpen: true,
+          itemId: action.payload,
+        }
+      }
+
+    case CLOSE_ITEM_DETAIL_MODAL:
+      return {
+        ...state,
+        modal: {
+          isOpen: false,
+        }
       }
 
     default:

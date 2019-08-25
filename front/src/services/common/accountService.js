@@ -3,7 +3,7 @@ import { COMPLETE_ACCOUNT_INFO } from '../../constants/actionTypes';
 
 function stubAccount() {
   return {
-    "user_id": "000001",
+    "account_id": "000001",
     "account_name": "test user name",
     "tall": 175,
     "shoulder": "sloping",

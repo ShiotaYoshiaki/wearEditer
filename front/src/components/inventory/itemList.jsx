@@ -6,21 +6,22 @@ import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
 import listSVG from '../../style/image/list.svg';
+import { isMobile } from '../../constants/functions';
 
 export default class ItemList extends React.Component {
 
   componentWillMount() {
     const { loadImageContentList } = this.props;
-    console.log('==============componentWillMount');
     loadImageContentList();
   }
 
   createItemList(itemList) {
-    const contentList = itemList.itemList.map(item => {
-      const { isPublic, tag, data, shop } = item;
+    const { openItemDetailModal } = this.props;
+    const contentList = itemList.list.map(item => {
+      const { isPublic, tag, data, shop, itemId } = item;
       const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
-        <ItemColumn >
+        <ItemColumn onClick={() => openItemDetailModal(itemId)} >
           <ItemData>
             <ItemListImg src={image} alt="" />
           </ItemData>
@@ -35,9 +36,10 @@ export default class ItemList extends React.Component {
   }
 
   createItemGrid(itemList) {
-    const contentList = itemList.itemList.map(item => {
+    const { openItemDetailModal } = this.props;
+      const contentList = itemList.list.map(item => {
       return (
-        <ItemGridImg src={image} alt="" />
+        <ItemGridImg src={image} alt=""  onClick={() => openItemDetailModal(item.itemId)}/>
       );
     });
     return contentList;
@@ -75,7 +77,7 @@ export default class ItemList extends React.Component {
 
   render() {
     const { changeToGridView, changeToListView, itemList } = this.props;
-    if (!itemList.itemList) return LOADING.S;
+    if (!itemList.list) return LOADING.S;
     return (
       <div>
         <div>

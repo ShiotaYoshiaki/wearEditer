@@ -12,8 +12,8 @@ export function loadImageContentList() {
     return { type: REQUEST_LOAD_ITEM_CONTENT_LIST };
 }
 
-export function openItemDetailModal() {
-    return { type: OPEN_ITEM_DETAIL_MODAL };
+export function openItemDetailModal(itemId) {
+    return { type: OPEN_ITEM_DETAIL_MODAL, payload: itemId };
 }
 
 export function closeItemDetailModal() {
