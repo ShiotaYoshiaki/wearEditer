@@ -1,6 +1,9 @@
 import React from 'react';
 import sideMenuImage from '../../style/image/sideMenu.svg';
 import closeImage from '../../style/image/close.svg';
+import { HeaderSideTavDiv } from '../../style/common/sideTab';
+import { HeaderSideTabButton } from '../../style/parts/button';
+import { HeaderSideTabImg } from '../../style/parts/img';
 
 export default class SideTab extends React.Component {
 
@@ -8,24 +11,24 @@ export default class SideTab extends React.Component {
     const { openSideTab, closeSideTab, sideTab } = this.props;
     if (!sideTab.isOpen) {
       return (
-        <button onClick={openSideTab} >
-          <img src={sideMenuImage} style={{ width: "40px", height: "40px" }} />
-        </button>
+        <HeaderSideTabButton onClick={openSideTab} >
+          <HeaderSideTabImg src={sideMenuImage} />
+        </HeaderSideTabButton>
       );
     } else {
       return (
-        <button onClick={closeSideTab} >
-          <img src={closeImage} style={{ width: "40px", height: "40px" }} />
-        </button>
+        <HeaderSideTabButton onClick={closeSideTab} >
+          <HeaderSideTabImg src={closeImage} />
+        </HeaderSideTabButton>
       )
     }
   }
 
   render() {
     return (
-      <div style={{ position: "absolute", left: "0" }}>
+      <HeaderSideTavDiv>
         {this.createSideButton()}
-      </div>
+      </HeaderSideTavDiv>
     );
   }
 }

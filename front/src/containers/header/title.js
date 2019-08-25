@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 // import * as titleModule from '../../modules/common/titleAction';
 import title from '../../components/header/title';
+import * as historyModule from '../../modules/common/historyAction';
 
 
 function mapStateToProps(state) {
@@ -11,8 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    // openSideTab: () => dispatch(titleModule.openSideTab()),
-    // openTitle: () => dispatch(titleModule.openTitle()),
+    movePage: (page) => dispatch(historyModule.movePage(page)),
   }
 }
 

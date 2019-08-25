@@ -37,9 +37,12 @@ export default class ItemList extends React.Component {
 
   createItemGrid(itemList) {
     const { openItemDetailModal } = this.props;
-      const contentList = itemList.list.map(item => {
+    const contentList = itemList.list.map(item => {
       return (
-        <ItemGridImg src={image} alt=""  onClick={() => openItemDetailModal(item.itemId)}/>
+        <ItemGridImg
+          src={image} alt=""
+          onClick={() => openItemDetailModal(item.itemId)}
+        />
       );
     });
     return contentList;

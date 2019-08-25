@@ -1,31 +1,32 @@
 import React from 'react';
 import SideTabButton from '../../containers/header/sideTab';
-import { SideTabDiv, SideMenuDiv } from '../../style/common/sideTab';
+import { SideTabDiv } from '../../style/common/sideTab';
 import { MENU } from '../../constants/parameter';
+import { SideMenuPageButton } from '../../style/parts/button';
 
 export default class SideTab extends React.Component {
 
   render() {
-    const { sideTab, openSideTab, closeSideTab } = this.props;
+    const { sideTab, movePage} = this.props;
     if (!sideTab.isOpen) return "";
     return (
       <SideTabDiv>
-        <SideTabButton />
-        <SideMenuDiv>
+        {/* <SideTabButton /> */}
+        <SideMenuPageButton onClick={() => movePage(MENU.TOP)}>
           {MENU.TOP}
-        </SideMenuDiv>
-        <SideMenuDiv>
+        </SideMenuPageButton>
+        <SideMenuPageButton onClick={() => movePage(MENU.INVENTORY)}>
           {MENU.INVENTORY}
-        </SideMenuDiv>
-        <SideMenuDiv>
+        </SideMenuPageButton>
+        <SideMenuPageButton onClick={() => movePage(MENU.AUTO_COORDINATE)}>
           {MENU.AUTO_COORDINATE}
-        </SideMenuDiv>
-        <SideMenuDiv>
+        </SideMenuPageButton>
+        <SideMenuPageButton onClick={() => movePage(MENU.HISTORY)}>
           {MENU.HISTORY}
-        </SideMenuDiv>
-        <SideMenuDiv>
+        </SideMenuPageButton>
+        <SideMenuPageButton onClick={() => movePage(MENU.MY_BAR_CODE)}>
           {MENU.MY_BAR_CODE}
-        </SideMenuDiv>
+        </SideMenuPageButton>
       </SideTabDiv>
     );
   }

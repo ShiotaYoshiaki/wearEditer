@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import * as headerModule from '../../modules/common/headerAction';
+import * as historyModule from '../../modules/common/historyAction';
 import header from '../../components/common/header';
 
 
@@ -15,6 +16,7 @@ function mapDispatchToProps(dispatch) {
     openSideTab: () => dispatch(headerModule.openSideTab()),
     openSetting: () => dispatch(headerModule.openSetting()),
     loadAccountInfo: () => dispatch(headerModule.loadAccountInfo()),
+    movePage: (page) => dispatch(historyModule.movePage(page)),
   }
 }
 

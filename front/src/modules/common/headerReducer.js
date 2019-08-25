@@ -16,13 +16,6 @@ export default function reducer(state = initialState, action) {
         content,
       };
 
-    // case OPEN_SIDE_TAB:
-    //   content.isSideOpen = true;
-    //   return {
-    //     ...state,
-    //     content,
-    //   };
-
     default:
       return state;
   }

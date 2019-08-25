@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { STYLE_HEADER_ACCOUNT } from '../constants/accountParameter';
+import { isMobile } from '../../constants/functions';
+import { M_HEADER_STYLE } from '../constants/parameter';
 
 export const Button = styled.button`
   cursor : pointer;
@@ -7,6 +9,11 @@ export const Button = styled.button`
   @media only screen and (max-device-width: 480px) {
     background-color: black;
   }
+`;
+
+export const HeaderButton = styled.button`
+  width: ${M_HEADER_STYLE.button}px;
+  height: ${M_HEADER_STYLE.button}px;
 `;
 
 export const GrayButton = styled(Button)`
@@ -18,9 +25,11 @@ export const TitleButton = styled(Button)`
   width: 100px;
 `;
 
-export const HeaderAccountButton = styled(Button)`
+export const HeaderAccountButton =(!isMobile())? styled(Button)`
   width: ${STYLE_HEADER_ACCOUNT.BUTTON_WIDTH}px;
   height: 50px;
+  `: styled(HeaderButton)`
+
 `;
 
 export const ModalCloseButton = styled(GrayButton)`
@@ -34,3 +43,23 @@ export const ModalCloseButton = styled(GrayButton)`
   position: absolute;
 `;
 
+export const SideMenuPageButton = styled.button`
+  height: 15%;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+`;
+
+export const HeaderSideTabButton = (!isMobile())? styled(Button)`
+
+  `: styled(HeaderButton)`
+
+`;
+
+
+export const HeaderSettingButton = (!isMobile())? styled(Button)`
+  position: absolute;
+  right: 0;
+`: styled(HeaderButton)`
+  
+`;
