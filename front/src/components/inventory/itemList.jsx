@@ -1,25 +1,29 @@
 import React from 'react';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
-import { HOW_TO_DISPLAY } from '../../constants/parameter';
+import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN } from '../../constants/parameter';
+import DetailModal from '../../containers/inventory/detailModal';
+import ItemListSetting from '../../containers/inventory/itemListSetting';
 import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
 import listSVG from '../../style/image/list.svg';
+import { isMobile } from '../../constants/functions';
 
 export default class ItemList extends React.Component {
 
   componentWillMount() {
     const { loadImageContentList } = this.props;
-    console.log('==============componentWillMount');
     loadImageContentList();
   }
 
-  createItemList(itemList) {
-    const contentList = itemList.itemList.map(item => {
-      const { isPublic, tag, data, shop } = item;
+  createItemList() {
+    const { openItemDetailModal, itemList } = this.props;
+    const contentList = itemList.order.map(id => {
+      const current = itemList.list.find(item => item.itemId === id);
+      const { isPublic, tag, data, shop, itemId } = current;
       const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
-        <ItemColumn >
+        <ItemColumn onClick={() => openItemDetailModal(itemId)} >
           <ItemData>
             <ItemListImg src={image} alt="" />
           </ItemData>
@@ -33,12 +37,15 @@ export default class ItemList extends React.Component {
     return contentList;
   }
 
-  createItemGrid(itemList) {
-    const contentList = itemList.itemList.map(item => {
-      const { isPublic, tag, data, shop } = item;
-      const publicRange = (isPublic) ? '公開する' : '公開しない';
+  createItemGrid() {
+    const { openItemDetailModal, itemList } = this.props;
+    const contentList = itemList.order.map(id => {
+      const current = itemList.list.find(item => item.itemId === id);
       return (
-        <ItemGridImg src={image} alt="" />
+        <ItemGridImg
+          src={image} alt=""
+          onClick={() => openItemDetailModal(current.itemId)}
+        />
       );
     });
     return contentList;
@@ -51,13 +58,13 @@ export default class ItemList extends React.Component {
         return (
           <ItemTable >
             <ItemColumn >
-              <ItemTitle>image</ItemTitle>
-              <ItemTitle >parts</ItemTitle>
-              <ItemTitle >shop name</ItemTitle>
-              <ItemTitle >shop url</ItemTitle>
-              <ItemTitle >公開範囲</ItemTitle>
+              <ItemTitle>{ITEM_COLUMN.IMAGE}</ItemTitle>
+              <ItemTitle >{ITEM_COLUMN.TAG}</ItemTitle>
+              <ItemTitle >{ITEM_COLUMN.SHOP_NAME}</ItemTitle>
+              <ItemTitle >{ITEM_COLUMN.ITEM_URL}</ItemTitle>
+              <ItemTitle >{ITEM_COLUMN.PUBLIC_RANGE}</ItemTitle>
             </ItemColumn>
-            {this.createItemList(itemList)}
+            {this.createItemList()}
           </ItemTable>
         );
       case HOW_TO_DISPLAY.GRID:
@@ -66,7 +73,7 @@ export default class ItemList extends React.Component {
             <ItemColumn >
               <ItemTitle>image</ItemTitle>
             </ItemColumn>
-            {this.createItemGrid(itemList)}
+            {this.createItemGrid()}
           </ItemTable>
         );
       default:
@@ -76,10 +83,10 @@ export default class ItemList extends React.Component {
 
   render() {
     const { changeToGridView, changeToListView, itemList } = this.props;
-    console.log('-------------itemList'); console.log(itemList);
-    if (!itemList.itemList) return 'loading';
+    if (!itemList.list) return LOADING.S;
     return (
       <div>
+        <ItemListSetting />
         <div>
           <button onClick={changeToGridView}>
             <GridDisplayImg src={gridSVG} al="" />
@@ -89,9 +96,9 @@ export default class ItemList extends React.Component {
           </button>
         </div>
         <ItemContentListDiv>
-          {this.createContents(itemList)}
-
+          {this.createContents()}
         </ItemContentListDiv>
+        <DetailModal />
       </div>
     );
   }
