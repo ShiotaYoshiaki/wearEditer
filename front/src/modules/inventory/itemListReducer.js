@@ -25,7 +25,8 @@ export default function reducer(state = initialState, action) {
     case COMPLETE_LOAD_ITEM_CONTENT_LIST:
       return {
         ...state,
-        list: action.action.payload,
+        list: action.action.payload.list,
+        order: action.action.payload.order,
       }
 
     case OPEN_ITEM_DETAIL_MODAL:

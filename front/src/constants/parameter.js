@@ -22,3 +22,11 @@ export const MENU = {
 export const MODAL = {
     ITEM_DETAIL: 'ITEM DETAIL',
 }
+
+export const ITEM_COLUMN = {
+    IMAGE: 'image',
+    TAG: 'tag',
+    SHOP_NAME: 'shop name',
+    ITEM_URL: 'item url',
+    PUBLIC_RANGE: '公開範囲',
+}

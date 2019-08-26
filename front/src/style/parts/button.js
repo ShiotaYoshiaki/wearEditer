@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { STYLE_HEADER_ACCOUNT } from '../constants/accountParameter';
 import { isMobile } from '../../constants/functions';
-import { M_HEADER_STYLE } from '../constants/parameter';
+import { M_HEADER_STYLE, SETTING_STYLE } from '../constants/parameter';
+import { COLOR_CHECK } from '../constants/color';
 
 export const Button = styled.button`
   cursor : pointer;
@@ -14,6 +15,16 @@ export const Button = styled.button`
 export const HeaderButton = styled.button`
   width: ${M_HEADER_STYLE.button}px;
   height: ${M_HEADER_STYLE.button}px;
+`;
+
+export const SettingButton = styled.button`
+  height: ${SETTING_STYLE.height}px;
+  width: ${SETTING_STYLE.width}px;
+  background-color: ${COLOR_CHECK.NOT_CHECKED};
+`;
+
+export const CheckedSettingButton = styled(SettingButton)`
+  background-color: ${COLOR_CHECK.CHECKED};
 `;
 
 export const GrayButton = styled(Button)`

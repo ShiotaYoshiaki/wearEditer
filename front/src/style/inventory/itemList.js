@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { PADDING } from '../constants/parameter';
+import { COLOR_ITEM_SETTING } from '../constants/color';
 
 export const ItemTable = styled.table`
   width: 100%;
@@ -32,4 +34,10 @@ padding: 10px 0;
 export const ItemContentListDiv = styled.div`
   right: 0;
   left: 0;
+`;
+
+export const ItemListSettingDiv = styled.div`
+  position: absolute;
+  right: ${PADDING};
+  background-color: ${COLOR_ITEM_SETTING}
 `;
