@@ -1,0 +1,5 @@
+{
+  "name": "TaggingImage",
+  "port": 3100,
+  "route:": "/api/taggingImage"
+}
