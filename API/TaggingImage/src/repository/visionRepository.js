@@ -6,7 +6,7 @@ function createAnalyzeParam () {
   const param = new vision.Request({
     image: new vision.Image('./test/data/image/sampleWear.jpg'),
     features: [
-      new vision.Feature('LABEL_DETECTION', 10),
+      new vision.Feature('LABEL_DETECTION', 20),
       new vision.Feature('LOGO_DETECTION', 4),
     ]
   });

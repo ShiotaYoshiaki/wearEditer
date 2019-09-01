@@ -1,0 +1,94 @@
+{
+  "result": "success",
+  "message": "",
+  "tags": [
+    {
+      "labelAnnotations": [
+        {
+          "mid": "/m/09j2d",
+          "description": "Clothing",
+          "score": 0.9151472,
+          "topicality": 0.9151472
+        },
+        {
+          "mid": "/m/015c4z",
+          "description": "Sitting",
+          "score": 0.86395836,
+          "topicality": 0.86395836
+        },
+        {
+          "mid": "/m/032tl",
+          "description": "Fashion",
+          "score": 0.82369065,
+          "topicality": 0.82369065
+        },
+        {
+          "mid": "/m/035r7c",
+          "description": "Leg",
+          "score": 0.7804156,
+          "topicality": 0.7804156
+        },
+        {
+          "mid": "/m/047vlmn",
+          "description": "Outerwear",
+          "score": 0.77841026,
+          "topicality": 0.77841026
+        },
+        {
+          "mid": "/m/09j5n",
+          "description": "Footwear",
+          "score": 0.75050354,
+          "topicality": 0.75050354
+        },
+        {
+          "mid": "/m/0408t8_",
+          "description": "Street fashion",
+          "score": 0.71496594,
+          "topicality": 0.71496594
+        },
+        {
+          "mid": "/m/02qbl1m",
+          "description": "Photo shoot",
+          "score": 0.62232995,
+          "topicality": 0.62232995
+        },
+        {
+          "mid": "/m/06rrc",
+          "description": "Shoe",
+          "score": 0.60214764,
+          "topicality": 0.60214764
+        },
+        {
+          "mid": "/m/0dzd8",
+          "description": "Neck",
+          "score": 0.59907013,
+          "topicality": 0.59907013
+        },
+        {
+          "mid": "/m/032b3c",
+          "description": "Jacket",
+          "score": 0.5895433,
+          "topicality": 0.5895433
+        },
+        {
+          "mid": "/m/062581",
+          "description": "Sleeve",
+          "score": 0.5762373,
+          "topicality": 0.5762373
+        },
+        {
+          "mid": "/m/01xygc",
+          "description": "Coat",
+          "score": 0.5637998,
+          "topicality": 0.5637998
+        },
+        {
+          "mid": "/m/012yh1",
+          "description": "Style",
+          "score": 0.50951844,
+          "topicality": 0.50951844
+        }
+      ]
+    }
+  ]
+}
