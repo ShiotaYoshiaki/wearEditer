@@ -1,22 +1,29 @@
-import  { getImageTags } from '../repository/visionRepository';
+import { getImageTags } from '../repository/visionRepository';
 
 
 async function getTags() {
-  const tags = await getImageTags();
+  const imageTags = await getImageTags();
+  const tags = imageTags.tags[0].labelAnnotations.map(tag => {
+    return {
+      description: tag.description,
+      score: tag.score,
+    }
+  });
   return tags;
 }
 
 export default async (param) => {
-
-  const tags = await getTags();
-
-  const result= 'success';
-  const message = '';
-
-  return {
-    result,
-    message,
-    tags,
-  };
+  try {
+    const tags = await getTags();
+    const result = 'success';
+    const message = '';
+    return {
+      result,
+      message,
+      tags,
+    };
+  } catch (e) {
+    console.log(e);
+  }
 }
 

@@ -1,0 +1,1225 @@
+
+{
+    "cropHintsAnnotation": {
+      "cropHints": [
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 399
+              },
+              {
+                "y": 399
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.55
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 322
+              },
+              {
+                "y": 322
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.52
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 267
+              },
+              {
+                "y": 267
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.48
+        }
+      ]
+    },
+    "faceAnnotations": [
+      {
+        "angerLikelihood": "VERY_UNLIKELY",
+        "blurredLikelihood": "VERY_UNLIKELY",
+        "boundingPoly": {
+          "vertices": [
+            {
+              "x": 203
+            },
+            {
+              "x": 307
+            },
+            {
+              "x": 307,
+              "y": 89
+            },
+            {
+              "x": 203,
+              "y": 89
+            }
+          ]
+        },
+        "detectionConfidence": 0.97831035,
+        "fdBoundingPoly": {
+          "vertices": [
+            {
+              "x": 212
+            },
+            {
+              "x": 289
+            },
+            {
+              "x": 289,
+              "y": 73
+            },
+            {
+              "x": 212,
+              "y": 73
+            }
+          ]
+        },
+        "headwearLikelihood": "VERY_UNLIKELY",
+        "joyLikelihood": "VERY_UNLIKELY",
+        "landmarkingConfidence": 0.70490813,
+        "landmarks": [
+          {
+            "position": {
+              "x": 231.95483,
+              "y": 13.399359,
+              "z": -0.00016076249
+            },
+            "type": "LEFT_EYE"
+          },
+          {
+            "position": {
+              "x": 251.93546,
+              "y": 19.886663,
+              "z": -19.262878
+            },
+            "type": "RIGHT_EYE"
+          },
+          {
+            "position": {
+              "x": 227.29619,
+              "y": 4.2450123,
+              "z": 9.985139
+            },
+            "type": "LEFT_OF_LEFT_EYEBROW"
+          },
+          {
+            "position": {
+              "x": 235.38481,
+              "y": 6.2956276,
+              "z": -9.35511
+            },
+            "type": "RIGHT_OF_LEFT_EYEBROW"
+          },
+          {
+            "position": {
+              "x": 246.84592,
+              "y": 8.346719,
+              "z": -19.701487
+            },
+            "type": "LEFT_OF_RIGHT_EYEBROW"
+          },
+          {
+            "position": {
+              "x": 267.29633,
+              "y": 15.790451,
+              "z": -25.098625
+            },
+            "type": "RIGHT_OF_RIGHT_EYEBROW"
+          },
+          {
+            "position": {
+              "x": 238.71368,
+              "y": 14.336994,
+              "z": -14.966505
+            },
+            "type": "MIDPOINT_BETWEEN_EYES"
+          },
+          {
+            "position": {
+              "x": 227.74706,
+              "y": 30.275345,
+              "z": -22.386305
+            },
+            "type": "NOSE_TIP"
+          },
+          {
+            "position": {
+              "x": 228.57379,
+              "y": 42.83628,
+              "z": -16.98938
+            },
+            "type": "UPPER_LIP"
+          },
+          {
+            "position": {
+              "x": 226.32022,
+              "y": 53.84237,
+              "z": -15.472216
+            },
+            "type": "LOWER_LIP"
+          },
+          {
+            "position": {
+              "x": 224.33623,
+              "y": 45.750206,
+              "z": -2.392608
+            },
+            "type": "MOUTH_LEFT"
+          },
+          {
+            "position": {
+              "x": 239.7519,
+              "y": 51.861446,
+              "z": -18.805002
+            },
+            "type": "MOUTH_RIGHT"
+          },
+          {
+            "position": {
+              "x": 228.55489,
+              "y": 48.24151,
+              "z": -15.289369
+            },
+            "type": "MOUTH_CENTER"
+          },
+          {
+            "position": {
+              "x": 239.71857,
+              "y": 37.387856,
+              "z": -18.88644
+            },
+            "type": "NOSE_BOTTOM_RIGHT"
+          },
+          {
+            "position": {
+              "x": 228.00613,
+              "y": 33.142956,
+              "z": -7.633228
+            },
+            "type": "NOSE_BOTTOM_LEFT"
+          },
+          {
+            "position": {
+              "x": 230.9514,
+              "y": 36.243034,
+              "z": -16.936243
+            },
+            "type": "NOSE_BOTTOM_CENTER"
+          },
+          {
+            "position": {
+              "x": 230.26054,
+              "y": 10.718712,
+              "z": -0.9766763
+            },
+            "type": "LEFT_EYE_TOP_BOUNDARY"
+          },
+          {
+            "position": {
+              "x": 235.62256,
+              "y": 15.109362,
+              "z": -3.585767
+            },
+            "type": "LEFT_EYE_RIGHT_CORNER"
+          },
+          {
+            "position": {
+              "x": 230.76534,
+              "y": 15.6658325,
+              "z": 0.21591607
+            },
+            "type": "LEFT_EYE_BOTTOM_BOUNDARY"
+          },
+          {
+            "position": {
+              "x": 228.054,
+              "y": 12.652245,
+              "z": 6.934309
+            },
+            "type": "LEFT_EYE_LEFT_CORNER"
+          },
+          {
+            "position": {
+              "x": 230.06569,
+              "y": 13.041929,
+              "z": 0.38789174
+            },
+            "type": "LEFT_EYE_PUPIL"
+          },
+          {
+            "position": {
+              "x": 253.40315,
+              "y": 17.743074,
+              "z": -22.025541
+            },
+            "type": "RIGHT_EYE_TOP_BOUNDARY"
+          },
+          {
+            "position": {
+              "x": 260.21606,
+              "y": 22.55506,
+              "z": -22.35957
+            },
+            "type": "RIGHT_EYE_RIGHT_CORNER"
+          },
+          {
+            "position": {
+              "x": 251.7741,
+              "y": 22.592916,
+              "z": -20.518309
+            },
+            "type": "RIGHT_EYE_BOTTOM_BOUNDARY"
+          },
+          {
+            "position": {
+              "x": 247.9995,
+              "y": 19.365105,
+              "z": -15.856579
+            },
+            "type": "RIGHT_EYE_LEFT_CORNER"
+          },
+          {
+            "position": {
+              "x": 253.79417,
+              "y": 20.27228,
+              "z": -21.276268
+            },
+            "type": "RIGHT_EYE_PUPIL"
+          },
+          {
+            "position": {
+              "x": 231.18167,
+              "y": 1.0808659,
+              "z": -1.1034696
+            },
+            "type": "LEFT_EYEBROW_UPPER_MIDPOINT"
+          },
+          {
+            "position": {
+              "x": 256.39597,
+              "y": 8.675274,
+              "z": -23.937096
+            },
+            "type": "RIGHT_EYEBROW_UPPER_MIDPOINT"
+          },
+          {
+            "position": {
+              "x": 235.71472,
+              "y": 32.435986,
+              "z": 43.21751
+            },
+            "type": "LEFT_EAR_TRAGION"
+          },
+          {
+            "position": {
+              "x": 286.82553,
+              "y": 48.15158,
+              "z": -4.4497046
+            },
+            "type": "RIGHT_EAR_TRAGION"
+          },
+          {
+            "position": {
+              "x": 240.42653,
+              "y": 7.3902006,
+              "z": -15.376385
+            },
+            "type": "FOREHEAD_GLABELLA"
+          },
+          {
+            "position": {
+              "x": 224.73268,
+              "y": 68.41945,
+              "z": -12.319262
+            },
+            "type": "CHIN_GNATHION"
+          },
+          {
+            "position": {
+              "x": 223.69559,
+              "y": 49.965538,
+              "z": 30.361055
+            },
+            "type": "CHIN_LEFT_GONION"
+          },
+          {
+            "position": {
+              "x": 270.74396,
+              "y": 64.020966,
+              "z": -12.312212
+            },
+            "type": "CHIN_RIGHT_GONION"
+          }
+        ],
+        "panAngle": -40.95452,
+        "rollAngle": 17.854528,
+        "sorrowLikelihood": "VERY_UNLIKELY",
+        "surpriseLikelihood": "VERY_UNLIKELY",
+        "tiltAngle": 1.2013887,
+        "underExposedLikelihood": "VERY_UNLIKELY"
+      }
+    ],
+    "imagePropertiesAnnotation": {
+      "cropHints": [
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 399
+              },
+              {
+                "y": 399
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.55
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 322
+              },
+              {
+                "y": 322
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.52
+        },
+        {
+          "boundingPoly": {
+            "vertices": [
+              {},
+              {
+                "x": 319
+              },
+              {
+                "x": 319,
+                "y": 267
+              },
+              {
+                "y": 267
+              }
+            ]
+          },
+          "confidence": 1,
+          "importanceFraction": 0.48
+        }
+      ],
+      "dominantColors": {
+        "colors": [
+          {
+            "color": {
+              "blue": 124,
+              "green": 150,
+              "red": 155
+            },
+            "hex": "9B967C",
+            "percent": 31.19030547097982,
+            "percentRounded": 31,
+            "pixelFraction": 0.24753551,
+            "rgb": "155, 150,\n 124",
+            "score": 0.25492468
+          },
+          {
+            "color": {
+              "blue": 22,
+              "green": 69,
+              "red": 123
+            },
+            "hex": "7B4516",
+            "percent": 14.734624677712693,
+            "percentRounded": 15,
+            "pixelFraction": 0.082706764,
+            "rgb": "123, 69,\n 22",
+            "score": 0.12042907
+          },
+          {
+            "color": {
+              "blue": 19,
+              "green": 21,
+              "red": 6
+            },
+            "hex": "061513",
+            "percent": 13.814104223430023,
+            "percentRounded": 14,
+            "pixelFraction": 0.14486216,
+            "rgb": "6, 21,\n 19",
+            "score": 0.11290547
+          },
+          {
+            "color": {
+              "green": 19,
+              "red": 52
+            },
+            "percent": 1.809477760254393,
+            "percentRounded": 2,
+            "pixelFraction": 0.009607351,
+            "score": 0.014789228
+          },
+          {
+            "color": {
+              "blue": 230,
+              "green": 238,
+              "red": 212
+            },
+            "hex": "D4EEE6",
+            "percent": 0.30982647577069694,
+            "percentRounded": 0,
+            "pixelFraction": 0.0024227235,
+            "rgb": "212, 238,\n 230",
+            "score": 0.0025322745
+          },
+          {
+            "color": {
+              "blue": 96,
+              "green": 124,
+              "red": 129
+            },
+            "hex": "817C60",
+            "percent": 16.48334681553338,
+            "percentRounded": 16,
+            "pixelFraction": 0.11570593,
+            "rgb": "129, 124,\n 96",
+            "score": 0.13472173
+          },
+          {
+            "color": {
+              "blue": 4,
+              "green": 44,
+              "red": 92
+            },
+            "hex": "5C2C04",
+            "percent": 6.780607427303022,
+            "percentRounded": 7,
+            "pixelFraction": 0.029406851,
+            "rgb": "92, 44,\n 4",
+            "score": 0.055419277
+          },
+          {
+            "color": {
+              "blue": 25,
+              "green": 29,
+              "red": 6
+            },
+            "hex": "061D19",
+            "percent": 6.380154846562673,
+            "percentRounded": 6,
+            "pixelFraction": 0.048705097,
+            "rgb": "6, 29,\n 25",
+            "score": 0.052146297
+          },
+          {
+            "color": {
+              "blue": 59,
+              "green": 86,
+              "red": 91
+            },
+            "hex": "5B563B",
+            "percent": 4.786785156354163,
+            "percentRounded": 5,
+            "pixelFraction": 0.030242272,
+            "rgb": "91, 86,\n 59",
+            "score": 0.039123364
+          },
+          {
+            "color": {
+              "blue": 28,
+              "green": 52,
+              "red": 59
+            },
+            "hex": "3B341C",
+            "percent": 3.7107671460991214,
+            "percentRounded": 4,
+            "pixelFraction": 0.022723475,
+            "rgb": "59, 52,\n 28",
+            "score": 0.030328851
+          }
+        ]
+      }
+    },
+    "labelAnnotations": [
+      {
+        "description": "Clothing",
+        "mid": "/m/09j2d",
+        "score": 0.9151472,
+        "topicality": 0.9151472
+      },
+      {
+        "description": "Sitting",
+        "mid": "/m/015c4z",
+        "score": 0.86395836,
+        "topicality": 0.86395836
+      },
+      {
+        "description": "Fashion",
+        "mid": "/m/032tl",
+        "score": 0.82369065,
+        "topicality": 0.82369065
+      },
+      {
+        "description": "Leg",
+        "mid": "/m/035r7c",
+        "score": 0.7804156,
+        "topicality": 0.7804156
+      },
+      {
+        "description": "Outerwear",
+        "mid": "/m/047vlmn",
+        "score": 0.77841026,
+        "topicality": 0.77841026
+      },
+      {
+        "description": "Footwear",
+        "mid": "/m/09j5n",
+        "score": 0.75050354,
+        "topicality": 0.75050354
+      },
+      {
+        "description": "Street fashion",
+        "mid": "/m/0408t8_",
+        "score": 0.71496594,
+        "topicality": 0.71496594
+      },
+      {
+        "description": "Photo shoot",
+        "mid": "/m/02qbl1m",
+        "score": 0.62232995,
+        "topicality": 0.62232995
+      },
+      {
+        "description": "Shoe",
+        "mid": "/m/06rrc",
+        "score": 0.60214764,
+        "topicality": 0.60214764
+      },
+      {
+        "description": "Neck",
+        "mid": "/m/0dzd8",
+        "score": 0.59907013,
+        "topicality": 0.59907013
+      },
+      {
+        "description": "Jacket",
+        "mid": "/m/032b3c",
+        "score": 0.5895433,
+        "topicality": 0.5895433
+      },
+      {
+        "description": "Sleeve",
+        "mid": "/m/062581",
+        "score": 0.5762373,
+        "topicality": 0.5762373
+      },
+      {
+        "description": "Coat",
+        "mid": "/m/01xygc",
+        "score": 0.5637998,
+        "topicality": 0.5637998
+      },
+      {
+        "description": "Style",
+        "mid": "/m/012yh1",
+        "score": 0.50951844,
+        "topicality": 0.50951844
+      }
+    ],
+    "localizedObjectAnnotations": [
+      {
+        "boundingPoly": {
+          "normalizedVertices": [
+            {
+              "x": 0.45716104,
+              "y": 0.3814706
+            },
+            {
+              "x": 0.63304335,
+              "y": 0.3814706
+            },
+            {
+              "x": 0.63304335,
+              "y": 0.5752353
+            },
+            {
+              "x": 0.45716104,
+              "y": 0.5752353
+            }
+          ]
+        },
+        "mid": "/m/0n5v01m",
+        "name": "Bag",
+        "score": 0.77338815
+      }
+    ],
+    "safeSearchAnnotation": {
+      "adult": "UNLIKELY",
+      "medical": "VERY_UNLIKELY",
+      "racy": "VERY_LIKELY",
+      "spoof": "VERY_UNLIKELY",
+      "violence": "VERY_UNLIKELY"
+    },
+    "webDetection": {
+      "bestGuessLabels": [
+        {
+          "label": "fashion model"
+        }
+      ],
+      "fullMatchingImages": [
+        {
+          "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+        },
+        {
+          "url": "https://im.uniqlo.com/style/20190826_women_012.jpg?imwidth=640"
+        },
+        {
+          "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+        },
+        {
+          "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+        },
+        {
+          "url": "http://im.uniqlo.com/style/20190826_women_012-l.jpg"
+        },
+        {
+          "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+        }
+      ],
+      "pagesWithMatchingImages": [
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO Ladies All Stylings ｜STYLING BOOK",
+          "url": "http://www.uniqlo.com/my/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO Ladies All stylings ｜STYLING BOOK",
+          "url": "http://www.uniqlo.com/sg/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO Ladies All stylings ｜STYLING BOOK",
+          "url": "http://www.uniqlo.com/in/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO&#39;s MEN EZY Ankle Pants stylings ｜STYLING BOOK",
+          "url": "http://www.uniqlo.com/sg/stylingbook/pc/style/20010849"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg?imwidth=640"
+            }
+          ],
+          "pageTitle": "WOMEN SWEAT LONG SLEEVED HOODIE DRESS | UNIQLO",
+          "url": "https://www.uniqlo.com/eu/en/product/women-sweat-long-sleeved-hoodie-dress-420551.html"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "Styling Book - Uniqlo",
+          "url": "http://www.uniqlo.com/tw/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ（レディース）のコーデ一覧｜STYLING BOOK - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg?imwidth=640"
+            }
+          ],
+          "pageTitle": "PANTALON ÉVASÉ CÔTELÉ FEMME | UNIQLO",
+          "url": "https://www.uniqlo.com/fr/fr/product/pantalon-evase-cotele-femme-422688.html"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            }
+          ],
+          "pageTitle": "ยูนิโคล่ สุภาพสตรี สไตล์การแต่งตัวทั้งหมด ｜คู่มือการแต่งตัว - Uniqlo",
+          "url": "http://www.uniqlo.com/th/stylingbook/pc/women"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-l.jpg"
+            }
+          ],
+          "pageTitle": "ยูนิโคล่ สุภาพสตรี สไตล์การแต่งตัวทั้งหมด ｜คู่มือการแต่งตัว - Uniqlo",
+          "url": "http://www.uniqlo.com/th/stylingbook/pc/category/women/tops/onepiece"
+        },
+        {
+          "pageTitle": "秋のおしゃれが加速する！最旬リブスタイル｜TODAY&#39;S PICK UP ...",
+          "partialMatchingImages": [
+            {
+              "url": "https://www.uniqlo.com/jp/news/topics/2019082201/img/1869T_190820LV9mBF.jpg"
+            }
+          ],
+          "url": "https://www.uniqlo.com/jp/news/topics/2019082201/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            },
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+            }
+          ],
+          "pageTitle": "스웨트후디원피스(긴팔) 유니클로 온라인 스토어 - Uniqlo",
+          "url": "https://store-kr.uniqlo.com/display/showDisplayCache.lecs?goodsNo=NQ31123221&displayNo=NQ1A02A11A05&storeNo=83&siteNo=50706"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-l.jpg"
+            }
+          ],
+          "pageTitle": "レディースのワンピースコーデ一覧｜STYLING BOOK - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/category/women/tops/onepiece"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜スウェットワンピース関連商品の通販・購入 - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%82%B9%E3%82%A6%E3%82%A7%E3%83%83%E3%83%88%E3%83%AF%E3%83%B3%E3%83%94%E3%83%BC%E3%82%B9/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-l.jpg"
+            }
+          ],
+          "pageTitle": "レディースのパンツコーデ一覧｜STYLING BOOK - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/category/women/bottoms/pants"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            },
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+            }
+          ],
+          "pageTitle": "립플레어팬츠 유니클로 온라인 스토어 - Uniqlo",
+          "url": "https://store-kr.uniqlo.com/display/showDisplay.lecs?goodsNo=NQ31124415&displayNo=NQ1A02A07A04"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            },
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+            }
+          ],
+          "pageTitle": "립플레어팬츠 유니클로 온라인 스토어 - Uniqlo",
+          "url": "https://store-kr.uniqlo.com/display/showDisplay.lecs?goodsNo=NQ31124415&displayNo=NQ1A02A06A01"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            },
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+            }
+          ],
+          "pageTitle": "스웨트후디원피스(긴팔) 유니클로 온라인 스토어 - Uniqlo",
+          "url": "https://store-kr.uniqlo.com/display/showDisplay.lecs?goodsNo=NQ31123221&displayNo=NQ1A02A11A05"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ワンピ 部屋着 - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%83%AF%E3%83%B3%E3%83%94%E3%80%80%E9%83%A8%E5%B1%8B%E7%9D%80/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜ワンピース カジュアル 旅行関連商品のコーデ・着こなし - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%83%AF%E3%83%B3%E3%83%94%E3%83%BC%E3%82%B9%E3%80%80%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%80%80%E6%97%85%E8%A1%8C/look/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜スウェットワンピ 春関連商品の通販・購入 - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%82%B9%E3%82%A6%E3%82%A7%E3%83%83%E3%83%88%E3%83%AF%E3%83%B3%E3%83%94%E3%80%80%E6%98%A5/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-m.jpg"
+            },
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xl.jpg"
+            }
+          ],
+          "pageTitle": "스웨트후디원피스(긴팔) 유니클로 온라인 스토어 - Uniqlo",
+          "url": "https://store-kr.uniqlo.com/display/showDisplay.lecs?goodsNo=NQ31123221&displayNo=NQ1A02A11A05&infwDispNo="
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010661"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010855"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010856"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010858"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010849"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010870"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010871"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010874"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010834"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/30010577"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010865"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010863"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO STYLING BOOK｜コーディネート特集",
+          "url": "https://www.uniqlo.com/jp/stylingbook/pc/style/20010872"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "UNIQLO&#39;s 童裝可攜式連帽外套stylings ｜STYLING BOOK",
+          "url": "http://www.uniqlo.com/tw/stylingbook/pc/style/20010832"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "http://im.uniqlo.com/style/20190826_women_012-xxl.jpg"
+            }
+          ],
+          "pageTitle": "Baby All stylings ｜STYLING BOOK - Uniqlo",
+          "url": "http://www.uniqlo.com/tw/stylingbook/pc/style/20010868"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜ワンピース オフィスカジュアル関連商品のコーデ・着こなし",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%83%AF%E3%83%B3%E3%83%94%E3%83%BC%E3%82%B9%E3%80%80%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB/look/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜スウェットワンピ関連商品の通販・購入 - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%82%B9%E3%82%A6%E3%82%A7%E3%83%83%E3%83%88%E3%83%AF%E3%83%B3%E3%83%94/"
+        },
+        {
+          "fullMatchingImages": [
+            {
+              "url": "https://im.uniqlo.com/style/20190826_women_012.jpg"
+            }
+          ],
+          "pageTitle": "ユニクロ｜パーカーワンピース関連商品の通販・購入 - Uniqlo",
+          "url": "https://www.uniqlo.com/jp/kw/%E3%83%91%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%AF%E3%83%B3%E3%83%94%E3%83%BC%E3%82%B9/"
+        }
+      ],
+      "partialMatchingImages": [
+        {
+          "url": "https://www.uniqlo.com/jp/news/topics/2019082201/img/1869T_190820LV9mBF.jpg"
+        }
+      ],
+      "visuallySimilarImages": [
+        {
+          "url": "http://f9vision.com/wp-content/uploads/2014/09/Jennifer-Garner-in-Max-Mara-Winter-Coat-300x300.jpg"
+        },
+        {
+          "url": "https://img1.cfcdn.club/dd/16/dd67d3930d73c3ebe73a67d2359e4d16.jpg"
+        },
+        {
+          "url": "https://m.media-amazon.com/images/G/01/Shopbop/p/prod/products/hrlow/hrlow4118611689/hrlow4118611689_q5_2-0._UX357_QL90_.jpg"
+        },
+        {
+          "url": "https://di2ponv0v5otw.cloudfront.net/posts/2019/05/04/5ccdfdbf7a81732a0a344e2a/s_5ccdff23aa7ed32985c3a091.jpg"
+        },
+        {
+          "url": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1383627685052015"
+        },
+        {
+          "url": "https://media.istockphoto.com/photos/girl-sitting-on-a-bench-picture-id177246057?k=6&m=177246057&s=612x612&w=0&h=INiEIW57wsb5yfTiGiiHQX4qEJLALIcF1ksXBnfIMGs="
+        },
+        {
+          "url": "https://www.picclickimg.com/d/l400/pict/233029441901_/Bridget-Moynahan-Sitting-On-The-Stairs-8x10-Quality.jpg"
+        },
+        {
+          "url": "https://i.pinimg.com/474x/d6/23/72/d623722bf8ac95e344c32d46cb9f7183.jpg"
+        },
+        {
+          "url": "https://as2.ftcdn.net/jpg/02/27/44/09/500_F_227440918_yb4IAtwlIKz7qo1eUt4tHgWXUAdMyZxn.jpg"
+        },
+        {
+          "url": "https://0cdacec1e3f0976c5ed8-35447a6832cda7b0f254421e2658d37b.ssl.cf2.rackcdn.com/product-blocksquare-2919118-429105-1562079795-e772541adbbe76f3278ebb5061bafba0.562079796_type_blocksquare_nid_2919118_uid_429105_3"
+        },
+        {
+          "url": "https://imcut.jollychic.com//uploads/jollyimg/imageLibrary/201810/11Y/22/IL201810221325488037.JPG"
+        },
+        {
+          "url": "https://i.ebayimg.com/images/g/5-cAAOSwLi1cglO4/s-l300.jpg"
+        }
+      ],
+      "webEntities": [
+        {
+          "description": "Uniqlo",
+          "entityId": "/m/09jh8w",
+          "score": 0.7241
+        },
+        {
+          "entityId": "/t/28mp980zdkx4f",
+          "score": 0.7241
+        },
+        {
+          "description": "ワンピース",
+          "entityId": "/g/1yh7_tfl3",
+          "score": 0.6946
+        },
+        {
+          "description": "Hoodie",
+          "entityId": "/m/05bhnr",
+          "score": 0.658
+        },
+        {
+          "description": "Fashion",
+          "entityId": "/m/032tl",
+          "score": 0.6532
+        },
+        {
+          "description": "スウェット",
+          "entityId": "/g/1233lvfl",
+          "score": 0.592
+        },
+        {
+          "description": "Pants",
+          "entityId": "/m/07mhn",
+          "score": 0.5635
+        },
+        {
+          "description": "Casual wear",
+          "entityId": "/m/06xgzn",
+          "score": 0.5276
+        },
+        {
+          "description": "Online shopping",
+          "entityId": "/m/047m52",
+          "score": 0.4024
+        },
+        {
+          "description": "UNIQLO Ezy",
+          "entityId": "/g/11h4lrfxxb",
+          "score": 0.3724
+        },
+        {
+          "description": "Product",
+          "entityId": "/m/01jwgf",
+          "score": 0.3351
+        },
+        {
+          "description": "アンクルパンツ",
+          "entityId": "/g/11f5jb8_9d",
+          "score": 0.2799
+        },
+        {
+          "description": "Leggings",
+          "entityId": "/m/04nk84",
+          "score": 0.2575
+        },
+        {
+          "description": "Jacket",
+          "entityId": "/m/032b3c",
+          "score": 0.2507729
+        },
+        {
+          "description": "Mail order",
+          "entityId": "/m/05wm2n",
+          "score": 0.2506
+        }
+      ]
+    }
+  }
