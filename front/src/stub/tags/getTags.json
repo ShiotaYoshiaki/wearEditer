@@ -1,0 +1,62 @@
+{
+  "result": "success",
+  "message": "",
+  "tags": [
+    {
+      "description": "Clothing",
+      "topicality": 0.9151472
+    },
+    {
+      "description": "Sitting",
+      "topicality": 0.86395836
+    },
+    {
+      "description": "Fashion",
+      "topicality": 0.82369065
+    },
+    {
+      "description": "Leg",
+      "topicality": 0.7804156
+    },
+    {
+      "description": "Outerwear",
+      "topicality": 0.77841026
+    },
+    {
+      "description": "Footwear",
+      "topicality": 0.75050354
+    },
+    {
+      "description": "Street fashion",
+      "topicality": 0.71496594
+    },
+    {
+      "description": "Photo shoot",
+      "topicality": 0.62232995
+    },
+    {
+      "description": "Shoe",
+      "topicality": 0.60214764
+    },
+    {
+      "description": "Neck",
+      "topicality": 0.59907013
+    },
+    {
+      "description": "Jacket",
+      "topicality": 0.5895433
+    },
+    {
+      "description": "Sleeve",
+      "topicality": 0.5762373
+    },
+    {
+      "description": "Coat",
+      "topicality": 0.5637998
+    },
+    {
+      "description": "Style",
+      "topicality": 0.50951844
+    }
+  ]
+}

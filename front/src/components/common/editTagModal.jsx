@@ -5,7 +5,7 @@ import { ModalCloseButton } from '../../style/parts/button';
 import closeImage from '../../style/image/closeXonly.svg';
 import { ModalCloseImg } from '../../style/parts/img';
 
-export default class DetailModal extends React.Component {
+export default class EditTagModal extends React.Component {
 
   render() {
     const { itemList, closeItemDetailModal } = this.props;

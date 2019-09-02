@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const DetailOutModalDiv = styled.div`
+export const OutModalDiv = styled.div`
   background-color: black;
   height: 100%;
   width: 100%;
@@ -13,7 +13,7 @@ export const DetailOutModalDiv = styled.div`
   position: fixed;
 `;
 
-export const DetailModalDiv= styled.div`
+export const ModalDiv= styled.div`
   height: 80%;
   width: 80%;
   position: fixed;
