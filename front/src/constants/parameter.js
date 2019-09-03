@@ -21,6 +21,7 @@ export const MENU = {
 
 export const MODAL = {
     ITEM_DETAIL: 'ITEM DETAIL',
+    EDIT_TAG: 'EDIT ITEM TAG'
 }
 
 export const ITEM_COLUMN = {

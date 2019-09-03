@@ -12,4 +12,3 @@ export function closeEditTagModal() {
 export function taggingImage(param) {
   return { type: TAGGING_IMAGE_REQUEST, param };
 }
-

@@ -8,11 +8,11 @@ import { AddContentButton } from '../../style/parts/button';
 
 
 export default class SideTab extends React.Component {
-
   render() {
+    const { openEditTagModal } = this.props;
     return (
       <AddContentDiv>
-        <AddContentButton>
+        <AddContentButton onClick={openEditTagModal} >
           <AddContentImg src={xImage} />
         </AddContentButton>
       </AddContentDiv>

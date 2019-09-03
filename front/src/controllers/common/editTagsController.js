@@ -1,5 +1,5 @@
 import { call, takeEvery } from 'redux-saga/effects'
-import * as editTagsService from '../../services/common/editTagsService';
+import * as editTagsService from '../../services/common/editTagModalService';
 import { TAGGING_IMAGE_REQUEST } from '../../constants/actionTypes';
 
 function* tagging(action) {
@@ -7,5 +7,5 @@ function* tagging(action) {
 }
 
 export default function* () {
-  yield takeEvery(TAGGING_IMAGE_REQUEST, tagging)
+  yield takeEvery(TAGGING_IMAGE_REQUEST, tagging);
 }

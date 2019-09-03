@@ -8,23 +8,22 @@ import { ModalCloseImg } from '../../style/parts/img';
 export default class EditTagModal extends React.Component {
 
   render() {
-    const { itemList, closeItemDetailModal } = this.props;
-    if (!itemList.modal.isOpen) return "";
-    const { list, modal } = itemList;
-    const selectedItem = list.find(item => item.itemId === modal.itemId);
+    const {
+      editTags, taggingRequest,
+      closeEditTagModal,
+    } = this.props;
+    if(!editTags.isOpen) return "";
     return (
       <div>
         <OutModalDiv />
         <ModalDiv>
           <ModalTitleDiv>
-            {MODAL.ITEM_DETAIL}
+            {MODAL.EDIT_TAG}
           </ModalTitleDiv>
           <div>
-            tag: {selectedItem.tag} <br />
-            shop name: {selectedItem.shop.name}<br />
-            shop url: {selectedItem.shop.url}<br />
+
           </div>
-          <ModalCloseButton onClick={closeItemDetailModal} >
+          <ModalCloseButton onClick={closeEditTagModal} >
             <ModalCloseImg src={closeImage} />
           </ModalCloseButton>
         </ModalDiv>

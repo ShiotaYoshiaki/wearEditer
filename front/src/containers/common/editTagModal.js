@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import * as editTagModule from '../../modules/common/editTagModalAction';
-import header from '../../components/common/header';
+import editTagModal from '../../components/common/editTagModal';
 
 
 function mapStateToProps(state) {
   return {
-    header: (state.header) ? state.header : {},
-    account: (state.header) ? state.account : {},
+    editTags: (state.editTags) ? state.editTags : {},
   }
 }
 
@@ -14,7 +13,8 @@ function mapDispatchToProps(dispatch) {
   return {
     openEditTagModal: param => dispatch(editTagModule.openEditTagModal(param)),
     closeEditTagModal: () => dispatch(editTagModule.closeEditTagModal()),
+    taggingRequest: param => dispatch(editTagModule.taggingImage(param)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(header);
+export default connect(mapStateToProps, mapDispatchToProps)(editTagModal);
