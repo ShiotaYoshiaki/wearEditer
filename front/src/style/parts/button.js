@@ -36,7 +36,7 @@ export const TitleButton = styled(Button)`
   width: 100px;
 `;
 
-export const HeaderAccountButton =(!isMobile())? styled(Button)`
+export const HeaderAccountButton = (!isMobile()) ? styled(Button)`
   width: ${STYLE_HEADER_ACCOUNT.BUTTON_WIDTH}px;
   height: 50px;
   `: styled(HeaderButton)`
@@ -61,16 +61,24 @@ export const SideMenuPageButton = styled.button`
   padding-right: 5px;
 `;
 
-export const HeaderSideTabButton = (!isMobile())? styled(Button)`
+export const HeaderSideTabButton = (!isMobile()) ? styled(Button)`
 
   `: styled(HeaderButton)`
 
 `;
 
 
-export const HeaderSettingButton = (!isMobile())? styled(Button)`
+export const HeaderSettingButton = (!isMobile()) ? styled(Button)`
   position: absolute;
   right: 0;
+`: styled(HeaderButton)`
+  
+`;
+
+export const AddContentButton = (!isMobile()) ? styled(Button)`
+  position: absolute;
+  background-color: transparent;
+  border: transparent 1px solid;
 `: styled(HeaderButton)`
   
 `;

@@ -49,3 +49,10 @@ export const HeaderSettingImg = (!isMobile())? styled.img`
 `: styled.img`
 height: ${M_HEADER_STYLE.image}px;
 `;
+
+export const AddContentImg = (!isMobile())? styled.img`
+  height: 40px;
+  transform: rotateZ(45deg);
+`: styled.img`
+  height: ${M_HEADER_STYLE.image}px;
+`;

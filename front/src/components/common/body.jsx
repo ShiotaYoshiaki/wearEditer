@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemList from '../../containers/inventory/itemList';
+import EditTagModal from '../../containers/common/editTagModal';
 import { BodyDiv } from '../../style/common/body';
 import { MENU } from '../../constants/parameter';
 
@@ -15,6 +16,7 @@ export default class Body extends React.Component {
     return (
       <BodyDiv>
         <ItemList />
+        <EditTagModal />
       </BodyDiv>
     );
   }
