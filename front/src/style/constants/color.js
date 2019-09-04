@@ -4,4 +4,4 @@ export const COLOR_CHECK ={
   CHECKED:  'blue',
   NOT_CHECKED: 'white',
 };
-
+export const COLOR_DEFAULT = '#F8F8FF';

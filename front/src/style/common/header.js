@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { DEFAULT_FONT_FAMIlY } from '../constants/font';
 import { STYLE_HEADER_ACCOUNT } from '../constants/accountParameter';
 import { isMobile } from '../../constants/functions';
+import { COLOR_DEFAULT } from '../constants/color';
 
 
 export const HeaderDiv = (isMobile()) ? styled.div`
@@ -9,7 +10,7 @@ export const HeaderDiv = (isMobile()) ? styled.div`
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: lightgray;
+  background-color: ${COLOR_DEFAULT};
   padding-left: 5px;
   padding-right: 5px;
   z-index: 15;

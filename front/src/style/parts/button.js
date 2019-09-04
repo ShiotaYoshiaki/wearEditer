@@ -2,38 +2,39 @@ import styled from 'styled-components';
 import { STYLE_HEADER_ACCOUNT } from '../constants/accountParameter';
 import { isMobile } from '../../constants/functions';
 import { M_HEADER_STYLE, SETTING_STYLE } from '../constants/parameter';
-import { COLOR_CHECK } from '../constants/color';
+import { COLOR_CHECK, COLOR_DEFAULT } from '../constants/color';
 
 export const Button = styled.button`
   cursor : pointer;
   background-color: white;
-  @media only screen and (max-device-width: 480px) {
-    background-color: black;
-  }
 `;
 
 export const HeaderButton = styled.button`
   width: ${M_HEADER_STYLE.button}px;
   height: ${M_HEADER_STYLE.button}px;
+  background-color: transparent;
+  border: none;
 `;
 
 export const SettingButton = styled.button`
   height: ${SETTING_STYLE.height}px;
   width: ${SETTING_STYLE.width}px;
-  background-color: ${COLOR_CHECK.NOT_CHECKED};
+  background-color: ${COLOR_DEFAULT};
 `;
 
 export const CheckedSettingButton = styled(SettingButton)`
-  background-color: ${COLOR_CHECK.CHECKED};
+  background-color: ${COLOR_DEFAULT};
 `;
 
 export const GrayButton = styled(Button)`
-  background-color: lightgray;
+  background-color: ${COLOR_DEFAULT};
 `;
 
-export const TitleButton = styled(Button)`
+export const TitleButton = (!isMobile()) ? styled(Button)`
   height: 40px;
   width: 100px;
+`: styled(HeaderButton)`
+
 `;
 
 export const HeaderAccountButton = (!isMobile()) ? styled(Button)`

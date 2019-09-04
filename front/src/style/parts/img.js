@@ -56,3 +56,12 @@ export const AddContentImg = (!isMobile())? styled.img`
 `: styled.img`
   height: ${M_HEADER_STYLE.image}px;
 `;
+
+export const HeaderHomeImg = (!isMobile())? styled.img`
+height: 40px;
+`: styled.img`
+height: ${M_HEADER_STYLE.image}px;
+`;
+
+
+
