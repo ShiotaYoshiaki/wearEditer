@@ -16,13 +16,12 @@ export default class Header extends React.Component {
 
   render() {
     const { openSideTab, openSetting, header } = this.props;
-    const title = (!isMobile()) ? (<Title />) : "";
     return (
       <HeaderDiv>
+        <Title />
         <SideTab />
         <Account />
         <Setting />
-        {title}
         <AddContent />
       </HeaderDiv>
     );

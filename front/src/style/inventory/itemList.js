@@ -39,5 +39,10 @@ export const ItemContentListDiv = styled.div`
 export const ItemListSettingDiv = styled.div`
   position: absolute;
   right: ${PADDING};
-  background-color: ${COLOR_ITEM_SETTING}
+  background-color: ${COLOR_ITEM_SETTING};
+`;
+
+export const TagEditDiv = styled.div`
+  position: absolute;
+  right: 30px
 `;
