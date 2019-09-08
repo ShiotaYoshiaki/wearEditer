@@ -1,14 +1,16 @@
 import React from 'react';
 import { ModalDiv, OutModalDiv, ModalTitleDiv } from '../../style/common/modal';
 import { MODAL } from '../../constants/parameter';
-import { ModalCloseButton } from '../../style/parts/button';
+import { ModalCloseButton, TagEditButton } from '../../style/parts/button';
 import closeImage from '../../style/image/closeXonly.svg';
-import { ModalCloseImg } from '../../style/parts/img';
+import editImage from '../../style/image/edit.svg';
+import { ModalCloseImg, TagEditImg } from '../../style/parts/img';
+import { TagEditDiv } from '../../style/inventory/itemList';
 
 export default class DetailModal extends React.Component {
 
   render() {
-    const { itemList, closeItemDetailModal } = this.props;
+    const { itemList, closeItemDetailModal, openEditTagModal } = this.props;
     if (!itemList.modal.isOpen) return "";
     const { list, modal } = itemList;
     const selectedItem = list.find(item => item.itemId === modal.itemId);
@@ -18,6 +20,11 @@ export default class DetailModal extends React.Component {
         <ModalDiv>
           <ModalTitleDiv>
             {MODAL.ITEM_DETAIL}
+            <TagEditDiv>
+              <TagEditButton onClick={openEditTagModal}>
+                <TagEditImg src={editImage} />
+              </TagEditButton>
+            </TagEditDiv>
           </ModalTitleDiv>
           <div>
             tag: {selectedItem.tag} <br />

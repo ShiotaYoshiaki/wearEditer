@@ -8,6 +8,7 @@ import * as historyModule from '../../modules/common/historyAction';
 function mapStateToProps(state) {
   return {
     addContent: (state.addContent) ? state.addContent : {},
+    editTags: (state.editTags) ? state.editTags : {},
   }
 }
 
@@ -15,6 +16,7 @@ function mapDispatchToProps(dispatch) {
   return {
     movePage: (page) => dispatch(historyModule.movePage(page)),
     openEditTagModal: param => dispatch(editTagModule.openEditTagModal(param)),
+    closeEditTagModal: () => dispatch(editTagModule.closeEditTagModal()),
   }
 }
 

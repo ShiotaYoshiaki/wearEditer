@@ -83,3 +83,9 @@ export const AddContentButton = (!isMobile()) ? styled(Button)`
 `: styled(HeaderButton)`
   
 `;
+
+export const TagEditButton = (!isMobile()) ? styled(Button)`
+
+`: styled(HeaderButton)`
+
+`;

@@ -30,6 +30,7 @@ export const ModalDiv= styled.div`
 
 const titleHeight = 40;
 export const ModalTitleDiv = styled.div`
+  display: flex;
   border-bottom: solid 4px black;
   height: ${titleHeight}px;
   line-height: ${titleHeight}px;

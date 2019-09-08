@@ -6,13 +6,16 @@ import { COLOR_DEFAULT } from '../constants/color';
 
 
 export const HeaderDiv = (isMobile()) ? styled.div`
-  height: 60px;
+  height: 8%;
+  min-height: 35px;
+  max-height: 50px;
   width: 100%;
   position: fixed;
   bottom: 0;
   background-color: ${COLOR_DEFAULT};
   padding-left: 5px;
   padding-right: 5px;
+  border-top: inset;
   z-index: 15;
 `: styled.div`
   height: 80px;

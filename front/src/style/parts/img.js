@@ -55,13 +55,22 @@ export const AddContentImg = (!isMobile())? styled.img`
   transform: rotateZ(45deg);
 `: styled.img`
   height: ${M_HEADER_STYLE.image}px;
+  transform: rotateZ(45deg);
+`;
+
+export const CloseContentImg = (!isMobile())? styled.img`
+  height: 40px;
+`: styled.img`
+  height: ${M_HEADER_STYLE.image}px;
 `;
 
 export const HeaderHomeImg = (!isMobile())? styled.img`
-height: 40px;
+  height: 40px;
 `: styled.img`
-height: ${M_HEADER_STYLE.image}px;
+  height: ${M_HEADER_STYLE.image}px;
 `;
 
-
+export const TagEditImg = styled.img`
+  height: 40px;
+`;
 
