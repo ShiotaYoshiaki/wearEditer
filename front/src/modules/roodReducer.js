@@ -4,6 +4,7 @@ import AccountReducer from './common/AccountReducer';
 import SideTabReducer from './common/sideTabReducer';
 import HistoryReducer from './common/historyReducer';
 import EditTagModalReducer from './common/editTagModalReducer';
+import AddContentReducer from './common/addContentReducer';
 
 export default {
     header: HeaderReducer,
@@ -12,4 +13,5 @@ export default {
     sideTab: SideTabReducer,
     history: HistoryReducer,
     editTags: EditTagModalReducer,
+    addContent: AddContentReducer,
 }

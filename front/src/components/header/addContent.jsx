@@ -10,17 +10,17 @@ import { AddContentButton } from '../../style/parts/button';
 export default class SideTab extends React.Component {
 
   createModalContent() {
-    const { openEditTagModal, closeEditTagModal, editTags } = this.props;
-    switch (editTags.isOpen) {
+    const { openAddContentModal, closeAddContentModal, addContent } = this.props;
+    switch (addContent.isOpen) {
       case true:
         return (
-          <AddContentButton onClick={closeEditTagModal} >
+          <AddContentButton onClick={closeAddContentModal} >
             <CloseContentImg src={xImage} />
           </AddContentButton>
         );
       case false:
         return (
-          <AddContentButton onClick={openEditTagModal} >
+          <AddContentButton onClick={openAddContentModal} >
             <AddContentImg src={xImage} />
           </AddContentButton>
         );
@@ -30,7 +30,6 @@ export default class SideTab extends React.Component {
   }
 
   render() {
-    const { openEditTagModal, editTags } = this.props;
     return (
       <AddContentDiv>
         {this.createModalContent()}
