@@ -1,8 +1,9 @@
 import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL } from "../../constants/actionTypes";
 import { HOW_TO_DISPLAY } from "../../constants/parameter";
+import { isMobile } from "../../constants/functions";
 
 const initialState = {
-  howToDisplay: HOW_TO_DISPLAY.LIST,
+  howToDisplay: (!isMobile()) ? HOW_TO_DISPLAY.LIST : HOW_TO_DISPLAY.GRID,
   modal: {
     isOpen: false,
   },
