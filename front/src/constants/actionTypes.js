@@ -12,6 +12,9 @@ export const COMPLETE_ACCOUNT_INFO = 'COMPLETE_ACCOUNT_INFO';
 
 /** account */
 
+/** addContent */
+export const OPEN_ADD_CONTENT_MODAL = 'OPEN_ADD_CONTENT_MODAL';
+export const CLOSE_ADD_CONTENT_MODAL = 'CLOSE_ADD_CONTENT_MODAL';
 
 
 /** itemList */

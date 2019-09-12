@@ -1,4 +1,6 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
 import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
@@ -8,8 +10,22 @@ import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img'
 import gridSVG from '../../style/image/grid.svg';
 import listSVG from '../../style/image/list.svg';
 import { isMobile } from '../../constants/functions';
+import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
 
-export default class ItemList extends React.Component {
+const useStyles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+  },
+};
+
+class ItemList extends React.Component {
 
   componentWillMount() {
     const { loadImageContentList } = this.props;
@@ -42,17 +58,24 @@ export default class ItemList extends React.Component {
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
       return (
-        <ItemGridImg
-          src={image} alt=""
-          onClick={() => openItemDetailModal(current.itemId)}
-        />
+        // <ItemGridImg
+        //   src={image} alt=""
+        //   onClick={() => openItemDetailModal(current.itemId)}
+        // />
+        <GridListTile key={image} cols={1}>
+          <img src={image} alt='sample' onClick={() => openItemDetailModal(current.itemId)} />
+          <GridListTileBar
+              title={current.tag}
+              subtitle={<span>by: {current.shop.name}</span>}
+            />
+        </GridListTile>
       );
     });
     return contentList;
   }
 
   createContents() {
-    const { itemList } = this.props;
+    const { itemList, classes } = this.props;
     switch (itemList.howToDisplay) {
       case HOW_TO_DISPLAY.LIST:
         return (
@@ -73,7 +96,11 @@ export default class ItemList extends React.Component {
             <ItemColumn >
               <ItemTitle>image</ItemTitle>
             </ItemColumn>
-            {this.createItemGrid()}
+            <div className={classes.root}>
+              <GridList cellHeight={160} className={classes.gridList} cols={3}>
+                {this.createItemGrid()}
+              </GridList>
+            </div>
           </ItemTable>
         );
       default:
@@ -103,3 +130,5 @@ export default class ItemList extends React.Component {
     );
   }
 }
+
+export default withStyles(useStyles)(ItemList)
