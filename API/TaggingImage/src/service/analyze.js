@@ -6,7 +6,7 @@ async function getTags() {
   const tags = imageTags.tags[0].labelAnnotations.map(tag => {
     return {
       description: tag.description,
-      score: tag.score,
+      topicality: tag.topicality,
     }
   });
   return tags;

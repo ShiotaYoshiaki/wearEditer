@@ -23,9 +23,12 @@ export const HeaderDiv = (isMobile()) ? styled.div`
 `;
 ;
 
-export const HeaderAccountDiv = styled.div`
+export const HeaderAccountDiv = (!isMobile()) ? styled.div`
   position: absolute;
   right: 100px;
+`: styled.div`
+  position: absolute;
+  left: 62%;
 `;
 
 const accountNameWidth = STYLE_HEADER_ACCOUNT.BUTTON_WIDTH - STYLE_HEADER_ACCOUNT.IMAGE_WIDTH;

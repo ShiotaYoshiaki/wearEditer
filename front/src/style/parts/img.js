@@ -28,7 +28,7 @@ export const HeaderAccountImg =(!isMobile())? styled.img`
   left: 5px;
 `: styled.img`
   height: ${M_HEADER_STYLE.image}px;
-  bottom: 5px;
+  bottom: 8px;
   position: absolute;
   left: 5px;
 `;

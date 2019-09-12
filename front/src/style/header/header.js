@@ -7,5 +7,5 @@ export const TitleDiv = (!isMobile()) ? styled.div`
   left: 0;
 `: styled.div`
   position: absolute;
-  left: 60px;
+  left: 28%;
 `;
