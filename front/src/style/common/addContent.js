@@ -8,6 +8,9 @@ export const AddContentDiv = (!isMobile()) ? styled.div`
   bottom: 60px;
   right: 70px;
 `: styled.div`
-
+  background-color: transparent;
+  position: fixed;
+  bottom: 60px;
+  right: 70px;
 `;
 ;

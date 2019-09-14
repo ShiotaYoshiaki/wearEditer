@@ -81,7 +81,8 @@ export const AddContentButton = (!isMobile()) ? styled(Button)`
   background-color: transparent;
   border: transparent 1px solid;
 `: styled(HeaderButton)`
-  
+  position: relative;
+  top: 8px;
 `;
 
 export const TagEditButton = (!isMobile()) ? styled(Button)`

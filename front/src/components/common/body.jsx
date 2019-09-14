@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import ItemList from '../../containers/inventory/itemList';
+import Top from '../../containers/top/topIndex';
 import EditTagModal from '../../containers/common/editTagModal';
 import AddContent from '../../containers/common/addContent';
 import { BodyDiv } from '../../style/common/body';
@@ -13,16 +14,28 @@ export default class Body extends React.Component {
     movePage(MENU.TOP);
   }
 
+  createBodyContent() {
+    const { history } = this.props;
+    switch (history.page) {
+      case MENU.TOP:
+        return (<Top />);
+      case MENU.ITEM_LIST:
+        return (<ItemList />)
+      default:
+        return '';
+    }
+  }
+
   render() {
-    const { openSideTab, openSetting, header } = this.props;
     return (
-      <BrowserRouter>
+      // <BrowserRouter>
         <BodyDiv>
-          <Route path='/' component={ItemList} />
+          {/* <Route path='/' component={Top} /> */}
+          {this.createBodyContent()}
           <EditTagModal />
           <AddContent />
         </BodyDiv>
-      </BrowserRouter>
+      // </BrowserRouter>
     );
   }
 }
