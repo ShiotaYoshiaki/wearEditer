@@ -13,6 +13,7 @@ export const LOADING = {
 
 export const MENU = {
     TOP: 'TOP',
+    ITEM_LIST: 'ITEM_LIST',
     INVENTORY: 'INVENTORY',
     AUTO_COORDINATE: 'AUTO COORDINATE',
     HISTORY: 'HISTORY',

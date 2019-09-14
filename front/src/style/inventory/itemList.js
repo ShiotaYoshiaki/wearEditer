@@ -5,7 +5,6 @@ import { COLOR_ITEM_SETTING } from '../constants/color';
 export const ItemTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  background-color: red;
 `;
 
 export const ItemColumn = styled.tr`

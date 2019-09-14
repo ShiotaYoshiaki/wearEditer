@@ -15,7 +15,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
 import sideMenuImage from '../../style/image/sideMenu.svg';
+import homeImage from '../../style/image/home.svg';
 import closeImage from '../../style/image/close.svg';
+import { HeaderSideTabImg, HeaderHomeImg } from '../../style/parts/img';
 
 class Header extends React.Component {
 
@@ -36,8 +38,8 @@ class Header extends React.Component {
     if (isMobile()) {
       return (
         <BottomNavigation value={'sample'} onChange={this.handleChange} className={classes.root}>
-          <BottomNavigationAction label="menu" value="menu" icon={<SideTab />} />
-          <BottomNavigationAction label="Account" value="account" icon={<AddContent />} />
+          <BottomNavigationAction label="menu" value="menu" icon={<HeaderSideTabImg src={sideMenuImage} />} />
+          <BottomNavigationAction label="Account" value="account" icon={<HeaderHomeImg src={homeImage} />} />
           <BottomNavigationAction label="Setting" value="setting" icon={<Account />} />
           <BottomNavigationAction label="Add Item" value="addItem" icon={<Setting />} />
         </BottomNavigation>

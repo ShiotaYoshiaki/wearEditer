@@ -7,6 +7,7 @@ import * as historyModule from '../../modules/common/historyAction';
 function mapStateToProps(state) {
   return {
     setting: (state.setting) ? state.setting : {},
+    history: (state.history) ? state.history : {},
   }
 }
 
