@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
-import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN } from '../../constants/parameter';
+import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN, MENU } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
 import ItemListSetting from '../../containers/inventory/itemListSetting';
 import image from '../../stub/image/kamakura.JPG';
@@ -109,7 +109,9 @@ class ItemList extends React.Component {
   }
 
   render() {
-    const { changeToGridView, changeToListView, itemList } = this.props;
+    const { 
+      changeToGridView, changeToListView, itemList,
+    } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
       <div>

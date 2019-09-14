@@ -17,29 +17,25 @@ export default class Body extends React.Component {
   createBodyContent() {
     const { history } = this.props;
     switch (history.page) {
-      case 'TOP':
-        console.log('==============');
+      case MENU.TOP:
         return (<Top />);
       case MENU.ITEM_LIST:
         return (<ItemList />)
       default:
-        console.log('-------------history.page'); console.log(history.page);
         return '';
     }
   }
 
   render() {
-    const { history } = this.props;
-    console.log('-------------history'); console.log(history);
-    console.log('-------------history.page)'); console.log(history.page);
     return (
-      <BrowserRouter>
+      // <BrowserRouter>
         <BodyDiv>
-          <Route path='/' component={Top} />
+          {/* <Route path='/' component={Top} /> */}
+          {this.createBodyContent()}
           <EditTagModal />
           <AddContent />
         </BodyDiv>
-      </BrowserRouter>
+      // </BrowserRouter>
     );
   }
 }
