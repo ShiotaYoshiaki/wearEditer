@@ -4,6 +4,7 @@ import ItemList from '../../containers/inventory/itemList';
 import Top from '../../containers/top/topIndex';
 import EditTagModal from '../../containers/common/editTagModal';
 import AddContent from '../../containers/common/addContent';
+import Setting from '../../containers/common/setting';
 import { BodyDiv } from '../../style/common/body';
 import { MENU } from '../../constants/parameter';
 
@@ -34,6 +35,7 @@ export default class Body extends React.Component {
           {this.createBodyContent()}
           <EditTagModal />
           <AddContent />
+          <Setting />
         </BodyDiv>
       // </BrowserRouter>
     );
