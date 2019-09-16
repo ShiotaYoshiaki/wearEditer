@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,30 +19,11 @@ const useStyles = {
 };
 
 class Setting extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      top: false,
-      left: false,
-      bottom: false,
-      right: false,
-    };
-  }
 
-  render() {
+  sideList() {
+    const { classes, closeSetting } = this.props;
 
-    const { classes, setting, closeSetting } = this.props;
-
-    const toggleDrawer = (side, open) => event => {
-      console.log('==============');
-      if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-        return;
-      }
-
-      this.setState({ ...this.state, [side]: open });
-    };
-
-    const sideList = side => (
+    return (
       <div
         className={classes.list}
         role="presentation"
@@ -69,12 +49,17 @@ class Setting extends React.Component {
         </List>
       </div>
     );
+  }
+
+  render() {
+
+    const { setting, closeSetting } = this.props;
+
 
     return (
       <div>
-        <Button onClick={toggleDrawer('right', true)}>Open Right</Button>
         <Drawer anchor="right" open={setting.isOpen} onClose={closeSetting}>
-          {sideList('right')}q
+          {this.sideList('right')}
         </Drawer>
       </div>
     );
