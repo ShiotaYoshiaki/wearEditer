@@ -126,7 +126,7 @@ class ItemList extends React.Component {
     const {
       itemList, changeList, classes,
     } = this.props;
-    const tagList = (itemList.tags)? itemList.tags.map(tag =>{
+    const tagList = itemList.editTags.list.map(tag =>{
       return (
       <Chip
         label={tag}
@@ -134,7 +134,7 @@ class ItemList extends React.Component {
         onClick={() => changeList('tags', tag)}
         clickable
       />
-    )}) : '';
+    )});
     return tagList;
   }
 
@@ -156,18 +156,6 @@ class ItemList extends React.Component {
           list
           <ItemListSetting />
           {this.createTagList()}
-          {/* <Chip
-            label="Basic Chip"
-            className={classes.chip}
-            onClick={() => changeList('tags', 'short')}
-            clickable
-          />
-          <Chip
-            label="Basic Chip"
-            className={classes.chip}
-            onClick={() => changeList('tags', 'Yarn')}
-            clickable
-          /> */}
         </ItemListSettingDiv>
         <ItemContentListDiv>
           {this.createContents()}

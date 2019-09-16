@@ -1,18 +1,29 @@
 import { select, put } from 'redux-saga/effects'
 import { COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST } from '../../constants/actionTypes';
+import { getTags } from './commonUtil';
 
-function refineList(itemListState, column, tag) {
-  const { list, order } = itemListState;
-  const currentList = list.filter(item =>
-    order.some(itemId => itemId === item.itemId));
-  console.log('------------currentList-'); console.log(currentList);
-  const displayList = currentList.filter(item => {
-    return item[column].some(tagData => {
-      return tagData.name === tag;
-    });
-  });
+/**
+ * 現在表示中のリストからパラメータで絞り込み
+ * @param {object} itemListState
+ * @param {string} column 現在はtagのみ対応 stateから取得するキーにする
+ * @param {string} tag 絞り込みを行うキー
+ */
+function refineList(displayList, column, tag) {
   const nextOrder = displayList.map(list => list.itemId);
   return nextOrder;
+}
+
+/**
+ * 絞り込み中の情報を編集する
+ * @param {*} itemListState
+ * @param {*} column
+ * @param {*} tag
+ */
+function editTagInfo(displayList, editTags, column, tag) {
+  const edits = editTags.edits;
+  edits.push({ column, tag });
+  const list = getTags(displayList);
+  return { edits, list };
 }
 
 /**
@@ -22,12 +33,20 @@ function refineList(itemListState, column, tag) {
 function* run(action) {
   const state = yield select();
   const itemListState = state.itemList;
+  const { list, order, editTags } = itemListState;
   const { column, tag } = action.payload;
-  const order = refineList(itemListState, column, tag);
+  const currentList = list.filter(item =>
+    order.some(itemId => itemId === item.itemId));
+  const displayList = currentList.filter(item => {
+    return item[column].some(tagData => {
+      return tagData.name === tag;
+    });
+  });
   yield put({
     type: COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST,
     payload: {
-      order,
+      order: refineList(displayList, column, tag),
+      editTags: editTagInfo(displayList, editTags, column, tag),
     }
   })
 }

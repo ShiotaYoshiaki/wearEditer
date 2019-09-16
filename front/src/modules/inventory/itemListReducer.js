@@ -9,6 +9,11 @@ const initialState = {
   modal: {
     isOpen: false,
   },
+  tags: [],
+  editTags: {
+    edits: [],
+    list: [],
+  },
 }
 
 export default function reducer(state = initialState, action) {
