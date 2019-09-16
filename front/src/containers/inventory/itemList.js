@@ -16,6 +16,7 @@ function mapDispatchToProps(dispatch) {
     loadImageContentList: () => dispatch(itemListAction.loadImageContentList()),
     openItemDetailModal: (itemId) => dispatch(itemListAction.openItemDetailModal(itemId)),
     changeList: (column, tag) => dispatch(itemListAction.changeToDisplayItemList(column, tag)),
+    clearEditTags: () => dispatch(itemListAction.clearEditTags()),
   }
 }
 

@@ -1,4 +1,4 @@
-import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, REQUEST_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL, REQUEST_CHANGE_TO_DISPLAY_ITEM_LIST } from "../../constants/actionTypes";
+import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, REQUEST_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL, REQUEST_CHANGE_TO_DISPLAY_ITEM_LIST, REQUEST_CLEAR_EDIT_TAG_ITEM_LIST } from "../../constants/actionTypes";
 
 export function changeToListView() {
     return { type: CHANGE_TO_LIST_VIEW };
@@ -27,5 +27,10 @@ export function changeToDisplayItemList(column, tag) {
             column,
             tag,
         }
-    }
+    };
 }
+
+export function clearEditTags() {
+    return { type: REQUEST_CLEAR_EDIT_TAG_ITEM_LIST };
+}
+

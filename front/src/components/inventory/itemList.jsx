@@ -12,6 +12,8 @@ import listSVG from '../../style/image/list.svg';
 import { ItemListSettingDiv } from '../../style/inventory/itemList';
 import { isMobile } from '../../constants/functions';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import RefreshIcon from '@material-ui/icons/Refresh';
 import Switch from '@material-ui/core/Switch';
 import Chip from '@material-ui/core/Chip';
 
@@ -40,7 +42,7 @@ const useStyles = {
 class ItemList extends React.Component {
   componentWillMount() {
     const { loadImageContentList, itemList } = this.props;
-    if(itemList.list.length === 0) loadImageContentList();
+    if (itemList.list.length === 0) loadImageContentList();
   }
 
   createItemList() {
@@ -127,15 +129,15 @@ class ItemList extends React.Component {
       itemList, changeList, classes,
     } = this.props;
     const tagList = itemList.editTags.list.map(tag => {
-      const chipColor = (itemList.editTags.edits.some(tagData => tagData.tag === tag)
-        ? 'primary' : '');
+      const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
+      const chipColor = (isChecked ? 'primary' : '');
       return (
         <Chip
           label={tag}
           className={classes.chip}
-          onClick={() => changeList('tags', tag)}
+          onClick={() => (!isChecked) ? changeList('tags', tag) : ''}
           color={chipColor}
-          clickable
+          clickable={true}
         />
       )
     });
@@ -145,6 +147,7 @@ class ItemList extends React.Component {
   render() {
     const {
       itemList, classes, changeList,
+      clearEditTags,
     } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
@@ -159,6 +162,15 @@ class ItemList extends React.Component {
           />
           list
           <ItemListSetting />
+          <IconButton
+            // edge="start"
+            // className={classes.menuButton}
+            color="inherit"
+            aria-label="refresh"
+            onClick={clearEditTags}
+          >
+            <RefreshIcon />
+          </IconButton>
           {this.createTagList()}
         </ItemListSettingDiv>
         <ItemContentListDiv>
