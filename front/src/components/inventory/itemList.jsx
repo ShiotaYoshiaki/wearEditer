@@ -126,7 +126,7 @@ class ItemList extends React.Component {
 
   createTagList() {
     const {
-      itemList, changeList, classes,
+      itemList, changeList, classes, clearChangeList,
     } = this.props;
     const tagList = itemList.editTags.list.map(tag => {
       const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
@@ -135,7 +135,7 @@ class ItemList extends React.Component {
         <Chip
           label={tag}
           className={classes.chip}
-          onClick={() => (!isChecked) ? changeList('tags', tag) : ''}
+          onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
           color={chipColor}
           clickable={true}
         />

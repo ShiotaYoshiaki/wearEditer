@@ -1,6 +1,6 @@
 import { select, put } from 'redux-saga/effects'
 import { COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST } from '../../constants/actionTypes';
-import { getTags } from './commonUtil';
+import { getTags, getDisplayList } from './commonUtil';
 
 /**
  * 現在表示中のリストからパラメータで絞り込み
@@ -35,13 +35,7 @@ function* run(action) {
   const itemListState = state.itemList;
   const { list, order, editTags } = itemListState;
   const { column, tag } = action.payload;
-  const currentList = list.filter(item =>
-    order.some(itemId => itemId === item.itemId));
-  const displayList = currentList.filter(item => {
-    return item[column].some(tagData => {
-      return tagData.name === tag;
-    });
-  });
+  const displayList = getDisplayList(list, order, column, tag);
   yield put({
     type: COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST,
     payload: {
