@@ -2,7 +2,22 @@
     {
         "isDeleted": false,
         "isPublic": false,
-        "tag": "cap",
+        "part": "cap",
+        "tags": [
+            {
+                "name": "cap",
+                "isDeleted": false
+            },
+            {
+                "name": "Street fashion",
+                "isDeleted": false
+            },
+            {
+                "name": "Hat collar",
+                "isDeleted": false
+            }
+        ],
+        "color": "blue",
         "itemId": "111222#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/kamakura.JPG",
         "shop": {
@@ -13,7 +28,18 @@
     {
         "isDeleted": false,
         "isPublic": true,
-        "tag": "pants",
+        "part": "pants",
+        "tags": [
+            {
+                "name": "long",
+                "isDeleted": false
+            },
+            {
+                "name": "jeans",
+                "isDeleted": false
+            }
+        ],
+        "color": "blue",
         "itemId": "3334444#2017-08-22T00:00:00.000Z",
         "data": "../../stub/image/kouriAiland.JPG",
         "shop": {
@@ -24,7 +50,18 @@
     {
         "isDeleted": false,
         "isPublic": true,
-        "tag": "shirt",
+        "part": "shirt",
+        "tags": [
+            {
+                "name": "short",
+                "isDeleted": false
+            },
+            {
+                "name": "simple",
+                "isDeleted": false
+            }
+        ],
+        "color": "white",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
         "shop": {
@@ -35,7 +72,22 @@
     {
         "isDeleted": false,
         "isPublic": true,
-        "tag": "shirt",
+        "part": "shirt",
+        "tags": [
+            {
+                "name": "short",
+                "isDeleted": false
+            },
+            {
+                "name": "long",
+                "isDeleted": false
+            },
+            {
+                "name": "simple",
+                "isDeleted": false
+            }
+        ],
+        "color": "blue",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
         "shop": {
@@ -46,7 +98,18 @@
     {
         "isDeleted": false,
         "isPublic": true,
-        "tag": "shirt",
+        "part": "shoes",
+        "tags": [
+            {
+                "name": "sneakers",
+                "isDeleted": false
+            },
+            {
+                "name": "new balance",
+                "isDeleted": false
+            }
+        ],
+        "color": "blue",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
         "shop": {
@@ -57,7 +120,18 @@
     {
         "isDeleted": false,
         "isPublic": true,
-        "tag": "",
+        "part": "socks",
+        "tags": [
+            {
+                "name": "short",
+                "isDeleted": false
+            },
+            {
+                "name": "Yarn",
+                "isDeleted": false
+            }
+        ],
+        "color": "black",
         "itemId": "777888#2017-03-22T00:00:00.000Z",
         "data": "",
         "shop": {

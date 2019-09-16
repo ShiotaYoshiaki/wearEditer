@@ -36,14 +36,14 @@ class ItemList extends React.Component {
     const { openItemDetailModal, itemList } = this.props;
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
-      const { isPublic, tag, data, shop, itemId } = current;
+      const { isPublic, part, data, shop, itemId } = current;
       const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
         <ItemColumn onClick={() => openItemDetailModal(itemId)} >
           <ItemData>
             <ItemListImg src={image} alt="" />
           </ItemData>
-          <ItemData >{tag}</ItemData>
+          <ItemData >{part}</ItemData>
           <ItemData >{shop.name}</ItemData>
           <ItemData >{shop.url}</ItemData>
           <ItemData >{publicRange}</ItemData>
@@ -65,7 +65,7 @@ class ItemList extends React.Component {
         <GridListTile key={image} cols={1}>
           <img src={image} alt='sample' onClick={() => openItemDetailModal(current.itemId)} />
           <GridListTileBar
-              title={current.tag}
+              title={current.part}
               subtitle={<span>by: {current.shop.name}</span>}
             />
         </GridListTile>

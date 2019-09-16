@@ -6,6 +6,7 @@ import stubImageList from '../../stub/imageList';
 function* loadItemList(action) {
   const list = stubImageList;
   const order = stubImageList.map(item => item.itemId);
+  // const tags = getTags(list);
   yield put({
     type: COMPLETE_LOAD_ITEM_CONTENT_LIST,
     action: {

@@ -28,7 +28,7 @@ export const MODAL = {
 
 export const ITEM_COLUMN = {
     IMAGE: 'image',
-    TAG: 'tag',
+    TAG: 'part',
     SHOP_NAME: 'shop name',
     ITEM_URL: 'item url',
     PUBLIC_RANGE: '公開範囲',
