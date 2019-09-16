@@ -23,6 +23,7 @@ function editTagInfo(displayList, editTags, column, tag) {
   const edits = editTags.edits;
   edits.push({ column, tag });
   const list = getTags(displayList);
+  // list.sort();
   return { edits, list };
 }
 

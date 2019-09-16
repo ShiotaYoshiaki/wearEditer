@@ -1,6 +1,19 @@
-
-
-
+/**
+ * 文字列のソートを行う
+ * 大文字、小文字問わない
+ * @param {*} a
+ * @param {*} b
+ */
+export function stringSort(a, b) {
+    a = a.toString().toLowerCase();
+    b = b.toString().toLowerCase();
+    if (a < b) {
+        return -1;
+    } else if (a > b) {
+        return 1;
+    }
+    return 0;
+}
 
 /**
  * ロードした結果からタグの一覧を取り出す
@@ -16,6 +29,7 @@ export function getTags(list) {
         });
     });
     const tags = allTags.filter((x, i, self) => self.indexOf(x) === i);
+    tags.sort(stringSort);
     return tags;
 }
 
