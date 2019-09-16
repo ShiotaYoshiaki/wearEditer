@@ -122,6 +122,22 @@ class ItemList extends React.Component {
       : changeToListView();
   };
 
+  createTagList() {
+    const {
+      itemList, changeList, classes,
+    } = this.props;
+    const tagList = (itemList.tags)? itemList.tags.map(tag =>{
+      return (
+      <Chip
+        label={tag}
+        className={classes.chip}
+        onClick={() => changeList('tags', tag)}
+        clickable
+      />
+    )}) : '';
+    return tagList;
+  }
+
   render() {
     const {
       itemList, classes, changeList,
@@ -139,12 +155,19 @@ class ItemList extends React.Component {
           />
           list
           <ItemListSetting />
-          <Chip
-           label="Basic Chip"
+          {this.createTagList()}
+          {/* <Chip
+            label="Basic Chip"
             className={classes.chip}
             onClick={() => changeList('tags', 'short')}
             clickable
-            />
+          />
+          <Chip
+            label="Basic Chip"
+            className={classes.chip}
+            onClick={() => changeList('tags', 'Yarn')}
+            clickable
+          /> */}
         </ItemListSettingDiv>
         <ItemContentListDiv>
           {this.createContents()}
