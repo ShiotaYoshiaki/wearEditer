@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemContentListDiv, ItemListSettingDiv } from '../../style/inventory/itemList';
+import { ItemContentListDiv } from '../../style/inventory/itemList';
 import { LOADING, ITEM_COLUMN } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
 import { GridDisplayImg } from '../../style/parts/img';
@@ -14,7 +14,7 @@ export default class ItemList extends React.Component {
     const { changeToGridView, changeToListView, itemList } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
-      <ItemListSettingDiv>
+      <div>
         <SettingButton>
           {ITEM_COLUMN.IMAGE}
         </SettingButton>
@@ -30,7 +30,7 @@ export default class ItemList extends React.Component {
         <SettingButton>
           {ITEM_COLUMN.PUBLIC_RANGE}
         </SettingButton>
-      </ItemListSettingDiv>
+      </div>
     );
   }
 }

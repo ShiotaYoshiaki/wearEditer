@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
+import Divider from '@material-ui/core/Divider';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
 import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN, MENU } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
@@ -9,8 +9,10 @@ import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
 import listSVG from '../../style/image/list.svg';
+import { ItemListSettingDiv } from '../../style/inventory/itemList';
 import { isMobile } from '../../constants/functions';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = {
   root: {
@@ -18,6 +20,7 @@ const useStyles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
+    paddingTop: '10px',
   },
   gridList: {
     width: 500,
@@ -26,6 +29,12 @@ const useStyles = {
 };
 
 class ItemList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: 'list',
+    };
+  }
 
   componentWillMount() {
     const { loadImageContentList } = this.props;
@@ -58,10 +67,6 @@ class ItemList extends React.Component {
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
       return (
-        // <ItemGridImg
-        //   src={image} alt=""
-        //   onClick={() => openItemDetailModal(current.itemId)}
-        // />
         <GridListTile key={image} cols={1}>
           <img src={image} alt='sample' onClick={() => openItemDetailModal(current.itemId)} />
           <GridListTileBar
@@ -93,9 +98,7 @@ class ItemList extends React.Component {
       case HOW_TO_DISPLAY.GRID:
         return (
           <ItemTable >
-            <ItemColumn >
-              <ItemTitle>image</ItemTitle>
-            </ItemColumn>
+            <Divider />
             <div className={classes.root}>
               <GridList cellHeight={160} className={classes.gridList} cols={3}>
                 {this.createItemGrid()}
@@ -108,27 +111,38 @@ class ItemList extends React.Component {
     };
   }
 
-  render() {
+  handleChange = name => event => {
     const {
       changeToGridView, changeToListView, itemList,
+    } = this.props;
+    (itemList.howToDisplay === 'list')
+      ? changeToGridView()
+      : changeToListView();
+  };
+
+  render() {
+    const {
+      itemList,
     } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
       <div>
-        <ItemListSetting />
-        <div>
-          <button onClick={changeToGridView}>
-            <GridDisplayImg src={gridSVG} al="" />
-          </button>
-          <button onClick={changeToListView}>
-            <GridDisplayImg src={listSVG} al="" />
-          </button>
-        </div>
+        <ItemListSettingDiv>
+          grid
+          <Switch
+            value="checkedF"
+            color="default"
+            onChange={this.handleChange('checkedF')}
+            inputProps={{ 'aria-label': 'checkbox with default color' }}
+          />
+          list
+          <ItemListSetting />
+        </ItemListSettingDiv>
         <ItemContentListDiv>
           {this.createContents()}
         </ItemContentListDiv>
         <DetailModal />
-      </div>
+      </div >
     );
   }
 }
