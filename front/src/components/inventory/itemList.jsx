@@ -65,9 +65,9 @@ class ItemList extends React.Component {
         <GridListTile key={image} cols={1}>
           <img src={image} alt='sample' onClick={() => openItemDetailModal(current.itemId)} />
           <GridListTileBar
-              title={current.part}
-              subtitle={<span>by: {current.shop.name}</span>}
-            />
+            title={current.part}
+            subtitle={<span>by: {current.shop.name}</span>}
+          />
         </GridListTile>
       );
     });
@@ -109,7 +109,7 @@ class ItemList extends React.Component {
   }
 
   render() {
-    const { 
+    const {
       changeToGridView, changeToListView, itemList,
     } = this.props;
     if (!itemList.list) return LOADING.S;
