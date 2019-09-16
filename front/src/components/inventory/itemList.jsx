@@ -13,6 +13,7 @@ import { ItemListSettingDiv } from '../../style/inventory/itemList';
 import { isMobile } from '../../constants/functions';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
+import Chip from '@material-ui/core/Chip';
 
 const useStyles = {
   root: {
@@ -22,20 +23,21 @@ const useStyles = {
     overflow: 'hidden',
     paddingTop: '10px',
   },
+  chipRoot: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
   gridList: {
     width: 500,
     height: 450,
   },
+  chip: {
+    // margin: theme.spacing(1),
+  },
 };
 
 class ItemList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      display: 'list',
-    };
-  }
-
   componentWillMount() {
     const { loadImageContentList } = this.props;
     loadImageContentList();
@@ -122,7 +124,7 @@ class ItemList extends React.Component {
 
   render() {
     const {
-      itemList,
+      itemList, classes, changeList,
     } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
@@ -137,6 +139,12 @@ class ItemList extends React.Component {
           />
           list
           <ItemListSetting />
+          <Chip
+           label="Basic Chip"
+            className={classes.chip}
+            onClick={() => changeList('tags', 'short')}
+            clickable
+            />
         </ItemListSettingDiv>
         <ItemContentListDiv>
           {this.createContents()}

@@ -11,6 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    changeList: (column, tag) => dispatch(itemListAction.changeToDisplayItemList(column, tag)),
   }
 }
 

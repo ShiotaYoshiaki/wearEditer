@@ -39,4 +39,3 @@ function* loadItemList(action) {
 }
 
 export { loadItemList }
-
