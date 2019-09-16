@@ -5,7 +5,6 @@ import { isMobile } from "../../constants/functions";
 const initialState = {
   howToDisplay: (!isMobile()) ? HOW_TO_DISPLAY.LIST : HOW_TO_DISPLAY.GRID,
   list: [],
-  displayList: [],
   order: [],
   modal: {
     isOpen: false,

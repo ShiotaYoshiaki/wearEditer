@@ -1,13 +1,14 @@
 import { select, put } from 'redux-saga/effects'
 import { COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST } from '../../constants/actionTypes';
 
-function refineList(list, column, tag){
+function refineList(list, column, tag) {
   const displayList = list.filter(item => {
     return item[column].some(tagData => {
       return tagData.name === tag;
     });
   });
-  return displayList;
+  const order = displayList.map(list => list.itemId);
+  return order;
 }
 
 /**
@@ -19,11 +20,11 @@ function* run(action) {
   const itemListState = state.itemList;
   const { list } = itemListState;
   const { column, tag } = action.payload;
-  const displayList = refineList(list, column, tag);
+  const order = refineList(list, column, tag);
   yield put({
     type: COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST,
     payload: {
-      displayList,
+      order,
     }
   })
 }
