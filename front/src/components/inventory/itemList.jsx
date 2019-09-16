@@ -39,8 +39,8 @@ const useStyles = {
 
 class ItemList extends React.Component {
   componentWillMount() {
-    const { loadImageContentList } = this.props;
-    loadImageContentList();
+    const { loadImageContentList, itemList } = this.props;
+    if(itemList.list.length === 0) loadImageContentList();
   }
 
   createItemList() {
@@ -126,15 +126,19 @@ class ItemList extends React.Component {
     const {
       itemList, changeList, classes,
     } = this.props;
-    const tagList = itemList.editTags.list.map(tag =>{
+    const tagList = itemList.editTags.list.map(tag => {
+      const chipColor = (itemList.editTags.edits.some(tagData => tagData.tag === tag)
+        ? 'primary' : '');
       return (
-      <Chip
-        label={tag}
-        className={classes.chip}
-        onClick={() => changeList('tags', tag)}
-        clickable
-      />
-    )});
+        <Chip
+          label={tag}
+          className={classes.chip}
+          onClick={() => changeList('tags', tag)}
+          color={chipColor}
+          clickable
+        />
+      )
+    });
     return tagList;
   }
 
