@@ -32,7 +32,7 @@ const useStyles = {
   },
   gridList: {
     width: 500,
-    height: 450,
+    // height: 450,
   },
   chip: {
     // margin: theme.spacing(1),

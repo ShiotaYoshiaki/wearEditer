@@ -21,6 +21,9 @@ import { withStyles } from '@material-ui/styles';
 const useStyles = {
   root: {
     flexGrow: 1,
+    position: 'fixed',
+    width: '100%',
+    zIndex: 1,
   },
   menuButton: {
     // marginRight: theme.spacing(2),
