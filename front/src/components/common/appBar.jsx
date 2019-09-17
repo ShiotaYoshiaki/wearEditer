@@ -15,11 +15,15 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import SettingsIcon from '@material-ui/icons/Settings';
 import { withStyles } from '@material-ui/styles';
 
 const useStyles = {
   root: {
     flexGrow: 1,
+    position: 'fixed',
+    width: '100%',
+    zIndex: 1,
   },
   menuButton: {
     // marginRight: theme.spacing(2),
@@ -31,22 +35,30 @@ const useStyles = {
 
 class AppTopBar extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes, openSetting } = this.props;
 
     return (
       <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              News
           </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="setting"
+              onClick={openSetting}
+              >
+              <SettingsIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }

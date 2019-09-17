@@ -1,4 +1,4 @@
-import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL } from "../../constants/actionTypes";
+import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL, COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST, COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST } from "../../constants/actionTypes";
 import { HOW_TO_DISPLAY } from "../../constants/parameter";
 import { isMobile } from "../../constants/functions";
 
@@ -8,6 +8,11 @@ const initialState = {
   order: [],
   modal: {
     isOpen: false,
+  },
+  tags: [],
+  editTags: {
+    edits: [],
+    list: [],
   },
 }
 
@@ -28,8 +33,7 @@ export default function reducer(state = initialState, action) {
     case COMPLETE_LOAD_ITEM_CONTENT_LIST:
       return {
         ...state,
-        list: action.action.payload.list,
-        order: action.action.payload.order,
+        ...action.payload,
       }
 
     case OPEN_ITEM_DETAIL_MODAL:
@@ -47,6 +51,18 @@ export default function reducer(state = initialState, action) {
         modal: {
           isOpen: false,
         }
+      }
+
+    case COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST:
+      return {
+        ...state,
+        ...action.payload,
+      }
+
+    case COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST:
+      return {
+        ...state,
+        ...action.payload,
       }
 
     default:

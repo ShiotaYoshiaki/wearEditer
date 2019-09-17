@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
+import Divider from '@material-ui/core/Divider';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
 import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN, MENU } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
@@ -9,8 +9,13 @@ import image from '../../stub/image/kamakura.JPG';
 import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
 import gridSVG from '../../style/image/grid.svg';
 import listSVG from '../../style/image/list.svg';
+import { ItemListSettingDiv } from '../../style/inventory/itemList';
 import { isMobile } from '../../constants/functions';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import RefreshIcon from '@material-ui/icons/Refresh';
+import Switch from '@material-ui/core/Switch';
+import Chip from '@material-ui/core/Chip';
 
 const useStyles = {
   root: {
@@ -18,32 +23,40 @@ const useStyles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
+    paddingTop: '10px',
+  },
+  chipRoot: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
   },
   gridList: {
     width: 500,
-    height: 450,
+    // height: 450,
+  },
+  chip: {
+    // margin: theme.spacing(1),
   },
 };
 
 class ItemList extends React.Component {
-
   componentWillMount() {
-    const { loadImageContentList } = this.props;
-    loadImageContentList();
+    const { loadImageContentList, itemList } = this.props;
+    if (itemList.list.length === 0) loadImageContentList();
   }
 
   createItemList() {
     const { openItemDetailModal, itemList } = this.props;
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
-      const { isPublic, tag, data, shop, itemId } = current;
+      const { isPublic, part, data, shop, itemId } = current;
       const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
         <ItemColumn onClick={() => openItemDetailModal(itemId)} >
           <ItemData>
             <ItemListImg src={image} alt="" />
           </ItemData>
-          <ItemData >{tag}</ItemData>
+          <ItemData >{part}</ItemData>
           <ItemData >{shop.name}</ItemData>
           <ItemData >{shop.url}</ItemData>
           <ItemData >{publicRange}</ItemData>
@@ -58,16 +71,12 @@ class ItemList extends React.Component {
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
       return (
-        // <ItemGridImg
-        //   src={image} alt=""
-        //   onClick={() => openItemDetailModal(current.itemId)}
-        // />
         <GridListTile key={image} cols={1}>
           <img src={image} alt='sample' onClick={() => openItemDetailModal(current.itemId)} />
           <GridListTileBar
-              title={current.tag}
-              subtitle={<span>by: {current.shop.name}</span>}
-            />
+            title={current.part}
+            subtitle={<span>by: {current.shop.name}</span>}
+          />
         </GridListTile>
       );
     });
@@ -93,9 +102,7 @@ class ItemList extends React.Component {
       case HOW_TO_DISPLAY.GRID:
         return (
           <ItemTable >
-            <ItemColumn >
-              <ItemTitle>image</ItemTitle>
-            </ItemColumn>
+            <Divider />
             <div className={classes.root}>
               <GridList cellHeight={160} className={classes.gridList} cols={3}>
                 {this.createItemGrid()}
@@ -108,27 +115,69 @@ class ItemList extends React.Component {
     };
   }
 
-  render() {
-    const { 
+  handleChange = name => event => {
+    const {
       changeToGridView, changeToListView, itemList,
+    } = this.props;
+    (itemList.howToDisplay === 'list')
+      ? changeToGridView()
+      : changeToListView();
+  };
+
+  createTagList() {
+    const {
+      itemList, changeList, classes, clearChangeList,
+    } = this.props;
+    const tagList = itemList.editTags.list.map(tag => {
+      const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
+      const chipColor = (isChecked ? 'primary' : '');
+      return (
+        <Chip
+          label={tag}
+          className={classes.chip}
+          onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+          color={chipColor}
+          clickable={true}
+        />
+      )
+    });
+    return tagList;
+  }
+
+  render() {
+    const {
+      itemList, classes, changeList,
+      clearEditTags,
     } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
       <div>
-        <ItemListSetting />
-        <div>
-          <button onClick={changeToGridView}>
-            <GridDisplayImg src={gridSVG} al="" />
-          </button>
-          <button onClick={changeToListView}>
-            <GridDisplayImg src={listSVG} al="" />
-          </button>
-        </div>
+        <ItemListSettingDiv>
+          grid
+          <Switch
+            value="checkedF"
+            color="default"
+            onChange={this.handleChange('checkedF')}
+            inputProps={{ 'aria-label': 'checkbox with default color' }}
+          />
+          list
+          <ItemListSetting />
+          <IconButton
+            // edge="start"
+            // className={classes.menuButton}
+            color="inherit"
+            aria-label="refresh"
+            onClick={clearEditTags}
+          >
+            <RefreshIcon />
+          </IconButton>
+          {this.createTagList()}
+        </ItemListSettingDiv>
         <ItemContentListDiv>
           {this.createContents()}
         </ItemContentListDiv>
         <DetailModal />
-      </div>
+      </div >
     );
   }
 }

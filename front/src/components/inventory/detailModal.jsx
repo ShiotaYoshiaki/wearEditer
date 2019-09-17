@@ -27,7 +27,7 @@ export default class DetailModal extends React.Component {
             </TagEditDiv>
           </ModalTitleDiv>
           <div>
-            tag: {selectedItem.tag} <br />
+            part: {selectedItem.part} <br />
             shop name: {selectedItem.shop.name}<br />
             shop url: {selectedItem.shop.url}<br />
           </div>
