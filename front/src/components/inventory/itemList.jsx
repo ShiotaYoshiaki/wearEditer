@@ -151,7 +151,7 @@ class ItemList extends React.Component {
     } = this.props;
     if (!itemList.list) return LOADING.S;
     return (
-      <div>
+      <div style={{ paddingTop: '35px' }}>
         <ItemListSettingDiv>
           grid
           <Switch
