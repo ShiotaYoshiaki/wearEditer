@@ -10,9 +10,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { withStyles } from '@material-ui/styles';
 
 const useStyles = {
-  root: {
-    height: 380,
-  },
+  root: {},
   speedDial: {
     position: 'fixed',
     display: 'flex',
