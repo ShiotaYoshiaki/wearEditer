@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import ItemList from '../../containers/inventory/itemList';
 import Top from '../../containers/top/topIndex';
 import EditTagModal from '../../containers/common/editTagModal';
-import AddContent from '../../containers/common/addContent';
+import AddContentModal from '../../containers/common/addContentModal';
 import Setting from '../../containers/common/setting';
+import SpeedDial from '../../containers/common/speedDial';
 import { BodyDiv } from '../../style/common/body';
 import { MENU } from '../../constants/parameter';
 
@@ -30,13 +31,14 @@ export default class Body extends React.Component {
   render() {
     return (
       // <BrowserRouter>
-        <BodyDiv>
-          {/* <Route path='/' component={Top} /> */}
-          {this.createBodyContent()}
-          <EditTagModal />
-          <AddContent />
-          <Setting />
-        </BodyDiv>
+      <BodyDiv>
+        {/* <Route path='/' component={Top} /> */}
+        {this.createBodyContent()}
+        <SpeedDial />
+        <EditTagModal />
+        <AddContentModal />
+        <Setting />
+      </BodyDiv>
       // </BrowserRouter>
     );
   }
