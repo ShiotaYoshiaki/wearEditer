@@ -39,3 +39,17 @@ export const ModalTitleDiv = styled.div`
   text-align: left;
 `;
 
+const Padding = '8px';
+export const DivModalContent = styled.div`
+  padding-left: ${Padding};
+  padding-right: ${Padding};
+`;
+
+export const DivModalImagePrev = styled.div`
+  position: absolute;
+  height: 43%;
+  width: 80%;
+  line-height: 10;
+  border:solid 1px #000000;
+`;
+

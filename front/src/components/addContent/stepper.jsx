@@ -4,12 +4,15 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
+import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import { DivModalStatus } from '../../style/common/addContent';
+import { DivModalImagePrev } from '../../style/common/modal';
 
 const useStyles = {
   root: {
-    width: '90%',
+    width: '100%',
   },
   backButton: {
     // marginRight: theme.spacing(1),
@@ -18,6 +21,9 @@ const useStyles = {
     // marginTop: theme.spacing(1),
     // marginBottom: theme.spacing(1),
   },
+  input: {
+    display: 'none',
+  }
 };
 
 function getSteps() {
@@ -37,7 +43,73 @@ function getStepContent(stepIndex) {
   }
 }
 
+const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
+
 class Setting extends React.Component {
+
+  createContent() {
+    const { addContent, classes } = this.props;
+    const { step } = addContent;
+    switch (step) {
+      case 0:
+        return (
+          <DivModalImagePrev>
+            <input
+              accept="image/*"
+              className={classes.input}
+              id="contained-button-file"
+              multiple
+              type="file"
+            />
+            <label htmlFor="contained-button-file">
+              <Button variant="contained" component="span" className={classes.button}>
+                Upload
+          </Button>
+            </label>
+          </DivModalImagePrev>
+        );
+      case 1:
+        return partList.map((part) => (
+          <Chip
+            label={part}
+            className={classes.chip}
+            // onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+            color={''}
+            clickable={true}
+          />
+        ));
+
+      case 2:
+        return (
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+            // onClick={() => moveAddContentModal(step + 1)}
+            >
+              Auto Recognition
+            </Button>
+            <Input
+              placeholder="Add Tag"
+              // className={classes.input}
+              inputProps={{
+                'aria-label': 'description',
+              }}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+            // onClick={() => moveAddContentModal(step + 1)}
+            >
+              Add
+            </Button>
+          </div>
+        );
+
+      default:
+        break;
+    }
+  }
 
   render() {
     const { classes, addContent, moveAddContentModal } = this.props;
@@ -62,6 +134,7 @@ class Setting extends React.Component {
           ) : (
               <div>
                 <Typography className={classes.instructions}>{getStepContent(step)}</Typography>
+                {this.createContent()}
                 <DivModalStatus>
                   <Button
                     disabled={step === 0}
