@@ -37,6 +37,7 @@ export default class Body extends React.Component {
       // <BrowserRouter>
       <BodyDiv>
         {/* <Route path='/' component={Top} /> */}
+        <div style={{ paddingTop: '35px' }} />
         {this.createBodyContent()}
         <SpeedDial />
         <EditTagModal />
