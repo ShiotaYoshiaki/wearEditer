@@ -2,11 +2,8 @@ import React from 'react';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
-import SaveIcon from '@material-ui/icons/Save';
-import PrintIcon from '@material-ui/icons/Print';
-import ShareIcon from '@material-ui/icons/Share';
-import DeleteIcon from '@material-ui/icons/Delete';
+import PublishIcon from '@material-ui/icons/Publish';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import { withStyles } from '@material-ui/styles';
 
 const useStyles = {
@@ -20,11 +17,8 @@ const useStyles = {
 };
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
-  { icon: <DeleteIcon />, name: 'Delete' },
+  { icon: <AccessibilityNewIcon />, name: 'Coordinate' },
+  { icon: <PublishIcon />, name: 'Item' },
 ];
 
 class speedDial extends React.Component {
