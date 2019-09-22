@@ -43,7 +43,7 @@ class Header extends React.Component {
         <BottomNavigation value={'sample'} onChange={handleChange} className={classes.root}>
           <BottomNavigationAction label="menu" value="menu" icon={<MenuIcon />} />
           <BottomNavigationAction label="Top" value={MENU.TOP} icon={<HomeIcon />} />
-          <BottomNavigationAction label="Account" value="account" icon={<AccountCircleIcon />}/>
+          <BottomNavigationAction label="Account" value={MENU.DASHBOARD} icon={<AccountCircleIcon />}/>
           <BottomNavigationAction label="Item List" value={MENU.ITEM_LIST} icon={<ViewComfyIcon />}/>
         </BottomNavigation>
       );

@@ -8,6 +8,7 @@ import Setting from '../../containers/common/setting';
 import SpeedDial from '../../containers/common/speedDial';
 import { BodyDiv } from '../../style/common/body';
 import { MENU } from '../../constants/parameter';
+import Dashboard from '../../components/dashboard/dashboard';
 
 export default class Body extends React.Component {
 
@@ -22,7 +23,10 @@ export default class Body extends React.Component {
       case MENU.TOP:
         return (<Top />);
       case MENU.ITEM_LIST:
-        return (<ItemList />)
+        return (<ItemList />);
+      case MENU.DASHBOARD:
+        return (<Dashboard />);
+
       default:
         return '';
     }
