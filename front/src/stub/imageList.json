@@ -20,6 +20,11 @@
         "color": "blue",
         "itemId": "111222#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/kamakura.JPG",
+        "evaluation": {
+            "good": 38,
+            "watch": 29,
+            "reference": 8
+        },
         "shop": {
             "name": "UNICRO",
             "url": "https://www.uniqlo.com/jp/"
@@ -42,6 +47,11 @@
         "color": "blue",
         "itemId": "3334444#2017-08-22T00:00:00.000Z",
         "data": "../../stub/image/kouriAiland.JPG",
+        "evaluation": {
+            "good": 20,
+            "watch": 19,
+            "reference": 2
+        },
         "shop": {
             "name": "SHIPS",
             "url": "https://www.shipsltd.co.jp/"
@@ -64,6 +74,11 @@
         "color": "white",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
+        "evaluation": {
+            "good": 76,
+            "watch": 400,
+            "reference": 29
+        },
         "shop": {
             "name": "BEAMS",
             "url": "https://www.beams.co.jp/"
@@ -90,6 +105,11 @@
         "color": "blue",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
+        "evaluation": {
+            "good": 66,
+            "watch": 400,
+            "reference": 89
+        },
         "shop": {
             "name": "BEAMS",
             "url": "https://www.beams.co.jp/"
@@ -112,6 +132,11 @@
         "color": "blue",
         "itemId": "555666#2017-03-22T00:00:00.000Z",
         "data": "../../stub/image/nemofira.JPG",
+        "evaluation": {
+            "good": 2,
+            "watch": 5,
+            "reference": 0
+        },
         "shop": {
             "name": "BEAMS",
             "url": "https://www.beams.co.jp/"
@@ -134,6 +159,11 @@
         "color": "black",
         "itemId": "777888#2017-03-22T00:00:00.000Z",
         "data": "",
+        "evaluation": {
+            "good": 20,
+            "watch": 59,
+            "reference": 0
+        },
         "shop": {
             "name": "",
             "url": ""

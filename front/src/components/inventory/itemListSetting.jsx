@@ -15,7 +15,7 @@ export default class ItemList extends React.Component {
     if (!itemList.list) return LOADING.S;
     return (
       <div>
-        <SettingButton>
+        {/* <SettingButton>
           {ITEM_COLUMN.IMAGE}
         </SettingButton>
         <SettingButton>
@@ -29,7 +29,7 @@ export default class ItemList extends React.Component {
         </SettingButton>
         <SettingButton>
           {ITEM_COLUMN.PUBLIC_RANGE}
-        </SettingButton>
+        </SettingButton> */}
       </div>
     );
   }

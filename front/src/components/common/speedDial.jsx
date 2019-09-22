@@ -2,11 +2,8 @@ import React from 'react';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
-import SaveIcon from '@material-ui/icons/Save';
-import PrintIcon from '@material-ui/icons/Print';
-import ShareIcon from '@material-ui/icons/Share';
-import DeleteIcon from '@material-ui/icons/Delete';
+import PublishIcon from '@material-ui/icons/Publish';
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import { withStyles } from '@material-ui/styles';
 
 const useStyles = {
@@ -19,14 +16,6 @@ const useStyles = {
   },
 };
 
-const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
-  { icon: <DeleteIcon />, name: 'Delete' },
-];
-
 class speedDial extends React.Component {
 
   constructor(props) {
@@ -35,11 +24,12 @@ class speedDial extends React.Component {
     this.state = {
       open: false,
     };
+
   }
 
   handleClick = () => {
     const { open: openState } = this.state;
-    this.setState({open : !openState});
+    this.setState({ open: !openState });
   };
 
   handleOpen = () => {
@@ -50,9 +40,19 @@ class speedDial extends React.Component {
     this.setState({ open: false });
   };
 
+  handleAddModalOpen = () =>{
+    const { openAddContentModal } = this.props;
+    openAddContentModal();
+    this.handleClick();
+  }
+
   render() {
     const { classes } = this.props;
     const { open } = this.state;
+    const actions = [
+      { icon: <AccessibilityNewIcon />, name: 'Coordinate', func: this.handleClick },
+      { icon: <PublishIcon />, name: 'Item', func: this.handleAddModalOpen },
+    ];
     return (
       <div className={classes.root}>
         <SpeedDial
@@ -73,7 +73,7 @@ class speedDial extends React.Component {
               icon={action.icon}
               tooltipTitle={action.name}
               tooltipOpen
-              onClick={this.handleClick}
+              onClick={action.func}
             />
           ))}
         </SpeedDial>

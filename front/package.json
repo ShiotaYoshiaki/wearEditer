@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-sam-local": "0.2.11",
+    "aws-sdk": "2.517.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-scripts": "3.0.1",
-    "aws-sdk": "2.517.0",
-    "aws-sam-local": "0.2.11"
+    "recharts": "1.7.1"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
@@ -30,7 +31,8 @@
     "styled-components": "4.3.2",
     "@material-ui/core": "4.4.2",
     "@material-ui/lab": "4.0.0-alpha.26",
-    "@material-ui/icons": "4.4.1"
+    "@material-ui/icons": "4.4.1",
+    "@types/recharts": "1.1.21"
   },
   "scripts": {
     "dev": "babel-node server.js",

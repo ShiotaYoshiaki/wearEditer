@@ -1,8 +1,13 @@
-import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL } from "../../constants/actionTypes";
+import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL } from "../../constants/actionTypes";
 
 const initialState = {
   isOpen: false,
+  step: 0,
   tags: [],
+  data: '',
+  part: '',
+  color: '',
+  shop: {},
 }
 
 export default function reducer(state = initialState, action) {
@@ -17,6 +22,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         isOpen: false,
+      };
+
+    case MOVE_CONTENT_ADD_MODAL:
+      return {
+        ...state,
+        step: action.payload,
       };
 
     default:

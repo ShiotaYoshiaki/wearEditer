@@ -14,7 +14,7 @@ export const OutModalDiv = styled.div`
 `;
 
 export const ModalDiv= styled.div`
-  height: 80%;
+  height: 66%;
   width: 80%;
   position: fixed;
   z-index: 30;
@@ -31,12 +31,25 @@ export const ModalDiv= styled.div`
 const titleHeight = 40;
 export const ModalTitleDiv = styled.div`
   display: flex;
-  border-bottom: solid 4px black;
   height: ${titleHeight}px;
   line-height: ${titleHeight}px;
   margin-left: 1%;
   margin-right: 1%;
   padding-left: 15px;
   text-align: left;
+`;
+
+const Padding = '8px';
+export const DivModalContent = styled.div`
+  padding-left: ${Padding};
+  padding-right: ${Padding};
+`;
+
+export const DivModalImagePrev = styled.div`
+  position: absolute;
+  height: 43%;
+  width: 80%;
+  line-height: 10;
+  border:solid 1px #000000;
 `;
 

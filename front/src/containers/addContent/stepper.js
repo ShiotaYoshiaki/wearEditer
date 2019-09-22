@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as addContentModule from '../../modules/common/addContentAction';
-import speedDial from '../../components/common/speedDial';
+import stepper from '../../components/addContent/stepper';
 
 
 function mapStateToProps(state) {
@@ -11,9 +11,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    openAddContentModal: () => dispatch(addContentModule.openAddContentModal()),
     closeAddContentModal: () => dispatch(addContentModule.closeAddContentModal()),
+    moveAddContentModal: step => dispatch(addContentModule.moveAddContentModal(step)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(speedDial);
+export default connect(mapStateToProps, mapDispatchToProps)(stepper);
