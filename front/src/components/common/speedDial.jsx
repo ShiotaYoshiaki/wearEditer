@@ -16,11 +16,6 @@ const useStyles = {
   },
 };
 
-const actions = [
-  { icon: <AccessibilityNewIcon />, name: 'Coordinate' },
-  { icon: <PublishIcon />, name: 'Item' },
-];
-
 class speedDial extends React.Component {
 
   constructor(props) {
@@ -29,11 +24,12 @@ class speedDial extends React.Component {
     this.state = {
       open: false,
     };
+
   }
 
   handleClick = () => {
     const { open: openState } = this.state;
-    this.setState({open : !openState});
+    this.setState({ open: !openState });
   };
 
   handleOpen = () => {
@@ -44,9 +40,19 @@ class speedDial extends React.Component {
     this.setState({ open: false });
   };
 
+  handleAddModalOpen = () =>{
+    const { openAddContentModal } = this.props;
+    openAddContentModal();
+    this.handleClick();
+  }
+
   render() {
     const { classes } = this.props;
     const { open } = this.state;
+    const actions = [
+      { icon: <AccessibilityNewIcon />, name: 'Coordinate', func: this.handleClick },
+      { icon: <PublishIcon />, name: 'Item', func: this.handleAddModalOpen },
+    ];
     return (
       <div className={classes.root}>
         <SpeedDial
@@ -67,7 +73,7 @@ class speedDial extends React.Component {
               icon={action.icon}
               tooltipTitle={action.name}
               tooltipOpen
-              onClick={this.handleClick}
+              onClick={action.func}
             />
           ))}
         </SpeedDial>

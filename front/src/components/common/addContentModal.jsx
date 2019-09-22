@@ -4,6 +4,7 @@ import { MODAL } from '../../constants/parameter';
 import { ModalCloseButton } from '../../style/parts/button';
 import closeImage from '../../style/image/closeXonly.svg';
 import { ModalCloseImg } from '../../style/parts/img';
+import Stepper from '../addContent/stepper';
 
 export default class EditTagModal extends React.Component {
 
@@ -12,7 +13,7 @@ export default class EditTagModal extends React.Component {
       addContent,
       closeAddContent,
     } = this.props;
-    if(!addContent.isOpen) return "";
+    if (!addContent.isOpen) return "";
     return (
       <div>
         <OutModalDiv />
@@ -21,7 +22,7 @@ export default class EditTagModal extends React.Component {
             {MODAL.ADD_CONTENT}
           </ModalTitleDiv>
           <div>
-
+            <Stepper />
           </div>
           <ModalCloseButton onClick={closeAddContent} >
             <ModalCloseImg src={closeImage} />

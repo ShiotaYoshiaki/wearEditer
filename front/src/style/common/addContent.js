@@ -13,4 +13,9 @@ export const AddContentDiv = (!isMobile()) ? styled.div`
   bottom: 60px;
   right: 70px;
 `;
-;
+
+export const DivModalStatus = styled.div`
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+`;
