@@ -4,9 +4,9 @@ import { MODAL } from '../../constants/parameter';
 import { ModalCloseButton } from '../../style/parts/button';
 import closeImage from '../../style/image/closeXonly.svg';
 import { ModalCloseImg } from '../../style/parts/img';
-import Stepper from '../addContent/stepper';
+import Stepper from '../../containers/addContent/stepper';
 
-export default class EditTagModal extends React.Component {
+export default class AddContentModal extends React.Component {
 
   render() {
     const {

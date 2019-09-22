@@ -38,42 +38,15 @@ function getStepContent(stepIndex) {
 }
 
 class Setting extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeStep: 0,
-    };
-
-    this.setActiveStep = (next) => {
-      this.setState({ activeStep: next });
-    }
-
-    this.handleNext = () => {
-      const { activeStep } = this.state;
-      this.setActiveStep(activeStep + 1);
-    }
-
-    this.handleBack = () => {
-      const { activeStep } = this.state;
-      this.setActiveStep(activeStep - 1);
-    }
-
-    this.handleReset = () => {
-      this.setActiveStep(0);
-    }
-  }
-
-
-
 
   render() {
-    const { activeStep } = this.state;
-    const { classes } = this.props;
+    const { classes, addContent, moveAddContentModal } = this.props;
+    const { step } = addContent;
     const steps = getSteps();
 
     return (
       <div className={classes.root}>
-        <Stepper activeStep={activeStep} alternativeLabel>
+        <Stepper activeStep={step} alternativeLabel>
           {steps.map(label => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
@@ -81,24 +54,24 @@ class Setting extends React.Component {
           ))}
         </Stepper>
         <div>
-          {activeStep === steps.length ? (
+          {step === steps.length ? (
             <div>
               <Typography className={classes.instructions}>All steps completed</Typography>
-              <Button onClick={this.handleReset}>Reset</Button>
+              <Button onClick={() => moveAddContentModal(0)}>Reset</Button>
             </div>
           ) : (
               <div>
-                <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                <Typography className={classes.instructions}>{getStepContent(step)}</Typography>
                 <DivModalStatus>
                   <Button
-                    disabled={activeStep === 0}
-                    onClick={this.handleBack}
+                    disabled={step === 0}
+                    onClick={() => moveAddContentModal(step - 1)}
                     className={classes.backButton}
                   >
                     Back
                 </Button>
-                  <Button variant="contained" color="primary" onClick={this.handleNext}>
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                  <Button variant="contained" color="primary" onClick={() => moveAddContentModal(step + 1)}>
+                    {step === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </DivModalStatus>
               </div>
