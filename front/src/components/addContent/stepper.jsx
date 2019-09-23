@@ -8,7 +8,7 @@ import Chip from '@material-ui/core/Chip';
 import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import { DivModalStatus } from '../../style/common/addContent';
-import { DivModalImagePrev } from '../../style/common/modal';
+import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
 
 const useStyles = {
   root: {
@@ -47,28 +47,45 @@ const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
 
 class Setting extends React.Component {
 
+  onFileSelect(file, set) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      set({ data: reader.result });
+      return reader.result;
+    };
+    reader.readAsDataURL(file.target.files[0]);
+  }
+
   createContent() {
     const {
       addContent, classes, changeTagName,
-      crateTag, deleteTag,
+      crateTag, deleteTag, set
     } = this.props;
-    const { step, tags, candidate } = addContent;
+    const { step, tags, candidate, data } = addContent;
     switch (step) {
       case 0:
         return (
           <DivModalImagePrev>
-            <input
-              accept="image/*"
-              className={classes.input}
-              id="contained-button-file"
-              multiple
-              type="file"
-            />
-            <label htmlFor="contained-button-file">
-              <Button variant="contained" component="span" className={classes.button}>
-                Upload
-          </Button>
-            </label>
+            {!data || data === '' ? (
+              <div>
+                <input
+                  accept="image/*"
+                  className={classes.input}
+                  id="contained-button-file"
+                  multiple
+                  type="file"
+                  onChange={file => this.onFileSelect(file, set)}
+                />
+                <label htmlFor="contained-button-file">
+                  <Button variant="contained" component="span" className={classes.button}>
+                    Upload
+                 </Button>
+                </label>
+              </div>
+            ) : (
+                <ImgModalImagePrev alt='please select' src={data} />
+              )}
+
           </DivModalImagePrev>
         );
       case 1:

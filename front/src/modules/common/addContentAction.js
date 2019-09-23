@@ -1,4 +1,4 @@
-import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL, CHANGE_TAG_NAME_ADD_CONTENT_MODAL, REQUEST_CREATE_TAG_ADD_CONTENT_MODAL, REQUEST_DELETE_TAG_ADD_CONTENT_MODAL } from "../../constants/actionTypes";
+import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL, CHANGE_TAG_NAME_ADD_CONTENT_MODAL, REQUEST_CREATE_TAG_ADD_CONTENT_MODAL, REQUEST_DELETE_TAG_ADD_CONTENT_MODAL, SET_ADD_CONTENT } from "../../constants/actionTypes";
 
 
 export function openAddContentModal() {
@@ -34,5 +34,12 @@ export function deleteTagAddContentModal(tag) {
   return {
     type: REQUEST_DELETE_TAG_ADD_CONTENT_MODAL,
     payload: tag,
+  }
+}
+
+export function setAddContentModal(item) {
+  return {
+    type: SET_ADD_CONTENT,
+    payload: item,
   }
 }
