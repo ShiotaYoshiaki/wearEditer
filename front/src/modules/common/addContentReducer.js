@@ -1,4 +1,4 @@
-import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL } from "../../constants/actionTypes";
+import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL, CHANGE_TAG_NAME_ADD_CONTENT_MODAL, COMPLETE_CREATE_TAG_ADD_CONTENT_MODAL, FAIL_CREATE_TAG_ADD_CONTENT_MODAL, COMPLETE_DELETE_TAG_ADD_CONTENT_MODAL } from "../../constants/actionTypes";
 
 const initialState = {
   isOpen: false,
@@ -8,6 +8,7 @@ const initialState = {
   part: '',
   color: '',
   shop: {},
+  candidate: '',
 }
 
 export default function reducer(state = initialState, action) {
@@ -28,6 +29,30 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         step: action.payload,
+      };
+
+    case CHANGE_TAG_NAME_ADD_CONTENT_MODAL:
+      return {
+        ...state,
+        candidate: action.payload,
+      };
+
+    case COMPLETE_CREATE_TAG_ADD_CONTENT_MODAL:
+      return {
+        ...state,
+        ...action.payload,
+      };
+
+    case FAIL_CREATE_TAG_ADD_CONTENT_MODAL:
+      return {
+        ...state,
+        ...action.payload,
+      };
+
+    case COMPLETE_DELETE_TAG_ADD_CONTENT_MODAL:
+      return {
+        ...state,
+        ...action.payload,
       };
 
     default:

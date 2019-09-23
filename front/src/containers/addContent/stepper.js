@@ -11,8 +11,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    closeAddContentModal: () => dispatch(addContentModule.closeAddContentModal()),
+    close: () => dispatch(addContentModule.closeAddContentModal()),
     moveAddContentModal: step => dispatch(addContentModule.moveAddContentModal(step)),
+    changeTagName: name => dispatch(addContentModule.changeTagNameAddContentModal(name)),
+    crateTag: () => dispatch(addContentModule.createTagAddContentModal()),
+    deleteTag: tag => dispatch(addContentModule.deleteTagAddContentModal(tag)),
   }
 }
 

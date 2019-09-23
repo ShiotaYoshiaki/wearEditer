@@ -48,8 +48,11 @@ const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
 class Setting extends React.Component {
 
   createContent() {
-    const { addContent, classes } = this.props;
-    const { step } = addContent;
+    const {
+      addContent, classes, changeTagName,
+      crateTag, deleteTag,
+    } = this.props;
+    const { step, tags } = addContent;
     switch (step) {
       case 0:
         return (
@@ -95,14 +98,25 @@ class Setting extends React.Component {
               inputProps={{
                 'aria-label': 'description',
               }}
+              onChange={e => changeTagName(e.target.value)}
             />
             <Button
               variant="contained"
               color="primary"
-            // onClick={() => moveAddContentModal(step + 1)}
+              onClick={crateTag}
             >
               Add
             </Button>
+            {tags.map((tag) => (
+              <Chip
+                label={tag}
+                className={classes.chip}
+                // onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+                color={''}
+                clickable={true}
+                onDelete={() => deleteTag(tag)}
+              />
+            ))}
           </div>
         );
 
