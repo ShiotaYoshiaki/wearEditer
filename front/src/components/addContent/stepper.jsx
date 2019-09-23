@@ -52,7 +52,7 @@ class Setting extends React.Component {
       addContent, classes, changeTagName,
       crateTag, deleteTag,
     } = this.props;
-    const { step, tags } = addContent;
+    const { step, tags, candidate } = addContent;
     switch (step) {
       case 0:
         return (
@@ -99,6 +99,7 @@ class Setting extends React.Component {
                 'aria-label': 'description',
               }}
               onChange={e => changeTagName(e.target.value)}
+              value={candidate}
             />
             <Button
               variant="contained"
@@ -111,7 +112,6 @@ class Setting extends React.Component {
               <Chip
                 label={tag}
                 className={classes.chip}
-                // onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
                 color={''}
                 clickable={true}
                 onDelete={() => deleteTag(tag)}
