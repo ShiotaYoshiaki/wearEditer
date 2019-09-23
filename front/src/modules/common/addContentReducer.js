@@ -1,4 +1,4 @@
-import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL, CHANGE_TAG_NAME_ADD_CONTENT_MODAL, COMPLETE_CREATE_TAG_ADD_CONTENT_MODAL, FAIL_CREATE_TAG_ADD_CONTENT_MODAL, COMPLETE_DELETE_TAG_ADD_CONTENT_MODAL, SET_ADD_CONTENT } from "../../constants/actionTypes";
+import { OPEN_ADD_CONTENT_MODAL, CLOSE_ADD_CONTENT_MODAL, MOVE_CONTENT_ADD_MODAL, CHANGE_TAG_NAME_ADD_CONTENT_MODAL, COMPLETE_CREATE_TAG_ADD_CONTENT_MODAL, FAIL_CREATE_TAG_ADD_CONTENT_MODAL, COMPLETE_DELETE_TAG_ADD_CONTENT_MODAL, SET_ADD_CONTENT, FAIL_RECOGNITION_ADD_CONTENT_MODAL, COMPLETE_RECOGNITION_ADD_CONTENT_MODAL } from "../../constants/actionTypes";
 
 const initialState = {
   isOpen: false,
@@ -56,6 +56,18 @@ export default function reducer(state = initialState, action) {
       };
 
     case SET_ADD_CONTENT:
+      return {
+        ...state,
+        ...action.payload,
+      };
+
+    case COMPLETE_RECOGNITION_ADD_CONTENT_MODAL:
+      return {
+        ...state,
+        ...action.payload,
+      };
+
+    case FAIL_RECOGNITION_ADD_CONTENT_MODAL:
       return {
         ...state,
         ...action.payload,

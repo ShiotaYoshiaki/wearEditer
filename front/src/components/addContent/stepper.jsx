@@ -59,7 +59,7 @@ class Setting extends React.Component {
   createContent() {
     const {
       addContent, classes, changeTagName,
-      crateTag, deleteTag, set
+      crateTag, deleteTag, set, recognition,
     } = this.props;
     const { step, tags, candidate, data } = addContent;
     switch (step) {
@@ -105,10 +105,11 @@ class Setting extends React.Component {
             <Button
               variant="contained"
               color="primary"
-            // onClick={() => moveAddContentModal(step + 1)}
+              onClick={recognition}
             >
               Auto Recognition
             </Button>
+            <br />
             <Input
               placeholder="Add Tag"
               // className={classes.input}
@@ -125,15 +126,18 @@ class Setting extends React.Component {
             >
               Add
             </Button>
-            {tags.map((tag) => (
-              <Chip
-                label={tag}
-                className={classes.chip}
-                color={''}
-                clickable={true}
-                onDelete={() => deleteTag(tag)}
-              />
-            ))}
+            <br />
+            <div>
+              {tags.map((tag) => (
+                <Chip
+                  label={tag}
+                  className={classes.chip}
+                  color={'primary'}
+                  clickable={true}
+                  onDelete={() => deleteTag(tag)}
+                />
+              ))}
+            </div>
           </div>
         );
 

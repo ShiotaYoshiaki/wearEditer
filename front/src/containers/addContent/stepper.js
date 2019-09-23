@@ -17,6 +17,7 @@ function mapDispatchToProps(dispatch) {
     crateTag: () => dispatch(addContentModule.createTagAddContentModal()),
     deleteTag: tag => dispatch(addContentModule.deleteTagAddContentModal(tag)),
     set: item => dispatch(addContentModule.setAddContentModal(item)),
+    recognition: () => dispatch(addContentModule.recognition()),
   }
 }
 
