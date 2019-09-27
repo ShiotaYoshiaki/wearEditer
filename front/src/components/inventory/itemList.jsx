@@ -6,11 +6,8 @@ import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN, MENU } from '../../constants/para
 import DetailModal from '../../containers/inventory/detailModal';
 import ItemListSetting from '../../containers/inventory/itemListSetting';
 import image from '../../stub/image/kamakura.JPG';
-import { ItemListImg, ItemGridImg, GridDisplayImg } from '../../style/parts/img';
-import gridSVG from '../../style/image/grid.svg';
-import listSVG from '../../style/image/list.svg';
+import { ItemListImg } from '../../style/parts/img';
 import { ItemListSettingDiv } from '../../style/inventory/itemList';
-import { isMobile } from '../../constants/functions';
 import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import RefreshIcon from '@material-ui/icons/Refresh';
@@ -49,7 +46,7 @@ class ItemList extends React.Component {
     const { openItemDetailModal, itemList } = this.props;
     const contentList = itemList.order.map(id => {
       const current = itemList.list.find(item => item.itemId === id);
-      const { isPublic, part, data, shop, itemId } = current;
+      const { isPublic, part, shop, itemId } = current;
       const publicRange = (isPublic) ? '公開する' : '公開しない';
       return (
         <ItemColumn onClick={() => openItemDetailModal(itemId)} >
