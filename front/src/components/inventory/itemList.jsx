@@ -2,7 +2,7 @@ import React from 'react';
 import GridList from '@material-ui/core/GridList';
 import Divider from '@material-ui/core/Divider';
 import { ItemTable, ItemColumn, ItemTitle, ItemData, ItemContentListDiv } from '../../style/inventory/itemList';
-import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN, MENU } from '../../constants/parameter';
+import { HOW_TO_DISPLAY, LOADING, ITEM_COLUMN } from '../../constants/parameter';
 import DetailModal from '../../containers/inventory/detailModal';
 import ItemListSetting from '../../containers/inventory/itemListSetting';
 import image from '../../stub/image/kamakura.JPG';
@@ -29,10 +29,6 @@ const useStyles = {
   },
   gridList: {
     width: 500,
-    // height: 450,
-  },
-  chip: {
-    // margin: theme.spacing(1),
   },
 };
 
@@ -112,7 +108,7 @@ class ItemList extends React.Component {
     };
   }
 
-  handleChange = name => event => {
+  handleChange() {
     const {
       changeToGridView, changeToListView, itemList,
     } = this.props;
@@ -123,7 +119,7 @@ class ItemList extends React.Component {
 
   createTagList() {
     const {
-      itemList, changeList, classes, clearChangeList,
+      itemList, changeList, clearChangeList,
     } = this.props;
     const tagList = itemList.editTags.list.map(tag => {
       const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
@@ -131,7 +127,6 @@ class ItemList extends React.Component {
       return (
         <Chip
           label={tag}
-          className={classes.chip}
           onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
           color={chipColor}
           clickable={true}
@@ -143,7 +138,7 @@ class ItemList extends React.Component {
 
   render() {
     const {
-      itemList, classes, changeList,
+      itemList,
       clearEditTags,
     } = this.props;
     if (!itemList.list) return LOADING.S;
@@ -154,14 +149,12 @@ class ItemList extends React.Component {
           <Switch
             value="checkedF"
             color="default"
-            onChange={this.handleChange('checkedF')}
+            onChange={() => this.handleChange('checkedF')}
             inputProps={{ 'aria-label': 'checkbox with default color' }}
           />
           list
           <ItemListSetting />
           <IconButton
-            // edge="start"
-            // className={classes.menuButton}
             color="inherit"
             aria-label="refresh"
             onClick={clearEditTags}
