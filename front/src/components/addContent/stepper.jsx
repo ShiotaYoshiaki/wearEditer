@@ -8,6 +8,7 @@ import Chip from '@material-ui/core/Chip';
 import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import ImageInput from '../../containers/addContent/imageInput';
+import PutTags from '../../containers/addContent/putTags';
 import { DivModalStatus } from '../../style/common/addContent';
 import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
 import SnackBar from './snackBars';
@@ -50,9 +51,9 @@ class Setting extends React.Component {
   createContent() {
     const {
       addContent, classes, changeTagName,
-      crateTag, deleteTag, set, recognition,
+      crateTag, deleteTag, recognition,
     } = this.props;
-    const { step, tags, candidate, data } = addContent;
+    const { step, tags, candidate } = addContent;
     switch (step) {
       case 0:
         return (
@@ -71,48 +72,7 @@ class Setting extends React.Component {
 
       case 2:
         return (
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={recognition}
-            >
-              Auto Recognition
-            </Button>
-            <br />
-            <Input
-              placeholder="Add Tag"
-              // className={classes.input}
-              inputProps={{
-                'aria-label': 'description',
-              }}
-              onChange={e => changeTagName(e.target.value)}
-              value={candidate}
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={crateTag}
-            >
-              Add
-            </Button>
-            <br />
-            <div>
-              {tags.map((tag) => (
-                <Chip
-                  label={tag}
-                  className={classes.chip}
-                  color={'primary'}
-                  clickable={true}
-                  onDelete={() => deleteTag(tag)}
-                />
-              ))}
-            </div>
-            <SnackBar
-              status='success'
-              message='move success'
-            />
-          </div>
+          <PutTags />
         );
 
       default:

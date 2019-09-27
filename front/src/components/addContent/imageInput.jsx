@@ -1,9 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
 
 const useStyles = {
@@ -13,7 +10,7 @@ const useStyles = {
 };
 
 
-class Setting extends React.Component {
+class ImageInput extends React.Component {
 
   onFileSelect(file, set) {
     const reader = new FileReader();
@@ -58,4 +55,4 @@ class Setting extends React.Component {
   }
 }
 
-export default withStyles(useStyles)(Setting);
+export default withStyles(useStyles)(ImageInput);
