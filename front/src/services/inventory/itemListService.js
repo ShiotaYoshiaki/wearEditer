@@ -4,8 +4,6 @@ import stubImageList from '../../stub/imageList';
 import { getTags } from './commonUtil';
 
 
-
-
 /**
  * 在庫をロード
  * @param {object} action

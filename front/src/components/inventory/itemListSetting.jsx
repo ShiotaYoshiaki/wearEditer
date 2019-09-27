@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import Switch from '@material-ui/core/Switch';
 import Chip from '@material-ui/core/Chip';
+import { getTargetInventoryList } from '../../constants/inventry';
 
 export default class ItemListSetting extends React.Component {
 
@@ -15,6 +16,25 @@ export default class ItemListSetting extends React.Component {
       ? changeToGridView()
       : changeToListView();
   };
+
+  createItemList() {
+    const {
+      itemList, changeList, clearChangeList,
+    } = this.props;
+    const targetList = getTargetInventoryList('color');
+    const colorList = targetList.map(color => {
+      const isChecked = colorList.editTags.edits.some(tagData => tagData.tag === color);
+      const chipColor = (isChecked ? 'primary' : '');
+      return (
+        <Chip
+          label={item}
+          onClick={() => (!isChecked) ? changeList('tags', color) : clearChangeList('tags', color)}
+          color={chipColor}
+          clickable={true}
+        />
+      );
+    })
+  }
 
   createTagList() {
     const {
@@ -30,7 +50,7 @@ export default class ItemListSetting extends React.Component {
           color={chipColor}
           clickable={true}
         />
-      )
+      );
     });
     return tagList;
   }
