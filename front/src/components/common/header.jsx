@@ -6,21 +6,13 @@ import AddContent from '../../containers/header/addContent';
 import Title from '../../containers/header/title'
 import { HeaderDiv, StyleBottomHeader } from '../../style/common/header';
 import { isMobile } from '../../constants/functions';
-import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import MenuIcon from '@material-ui/icons/Menu';
-import FolderIcon from '@material-ui/icons/Folder';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ViewComfyIcon from '@material-ui/icons/ViewComfy';
-import { GridListTile, withStyles, GridListTileBar } from '@material-ui/core';
-import sideMenuImage from '../../style/image/sideMenu.svg';
-import homeImage from '../../style/image/home.svg';
-import closeImage from '../../style/image/close.svg';
-import { HeaderSideTabImg, HeaderHomeImg } from '../../style/parts/img';
+import { withStyles } from '@material-ui/core';
 import { MENU } from '../../constants/parameter';
 
 class Header extends React.Component {

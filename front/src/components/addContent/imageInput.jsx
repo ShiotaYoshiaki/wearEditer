@@ -9,7 +9,6 @@ const useStyles = {
   }
 };
 
-
 class ImageInput extends React.Component {
 
   onFileSelect(file, set) {

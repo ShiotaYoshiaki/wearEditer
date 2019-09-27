@@ -5,13 +5,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
-import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import ImageInput from '../../containers/addContent/imageInput';
 import PutTags from '../../containers/addContent/putTags';
 import { DivModalStatus } from '../../style/common/addContent';
-import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
-import SnackBar from './snackBars';
 
 const useStyles = {
   root: {
@@ -47,13 +44,11 @@ const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
 
 class Setting extends React.Component {
 
-
   createContent() {
     const {
-      addContent, classes, changeTagName,
-      crateTag, deleteTag, recognition,
+      addContent, classes,
     } = this.props;
-    const { step, tags, candidate } = addContent;
+    const { step } = addContent;
     switch (step) {
       case 0:
         return (

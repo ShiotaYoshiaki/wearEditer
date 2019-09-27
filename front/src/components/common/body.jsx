@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import { BrowserRouter, Route, Link } from 'react-router-dom';
 import ItemList from '../../containers/inventory/itemList';
 import Top from '../../containers/top/topIndex';
 import EditTagModal from '../../containers/common/editTagModal';
