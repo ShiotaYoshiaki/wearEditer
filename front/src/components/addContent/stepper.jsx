@@ -9,6 +9,7 @@ import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
 import { DivModalStatus } from '../../style/common/addContent';
 import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
+import SnackBar from './snackBars';
 
 const useStyles = {
   root: {
@@ -138,6 +139,10 @@ class Setting extends React.Component {
                 />
               ))}
             </div>
+            <SnackBar
+              status='success'
+              message='move success'
+            />
           </div>
         );
 

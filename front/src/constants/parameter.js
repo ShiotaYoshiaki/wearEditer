@@ -35,3 +35,10 @@ export const ITEM_COLUMN = {
     ITEM_URL: 'item url',
     PUBLIC_RANGE: '公開範囲',
 }
+
+export const SNACK_BAR_PARAM = {
+    SUCCESS: 'success',
+    INFO: 'info',
+    ERROR: 'error',
+    WARNING: 'warning',
+}

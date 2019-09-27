@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    closeAddContentModal: () => dispatch(addContentModule.closeAddContentModal()),
+    close: () => dispatch(addContentModule.closeAddContentModal()),
   }
 }
 
