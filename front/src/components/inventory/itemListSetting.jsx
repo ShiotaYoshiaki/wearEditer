@@ -1,36 +1,75 @@
 import React from 'react';
-import { ItemContentListDiv } from '../../style/inventory/itemList';
-import { LOADING, ITEM_COLUMN } from '../../constants/parameter';
-import DetailModal from '../../containers/inventory/detailModal';
-import { GridDisplayImg } from '../../style/parts/img';
-import gridSVG from '../../style/image/grid.svg';
-import listSVG from '../../style/image/list.svg';
-import { isMobile } from '../../constants/functions';
-import { SettingButton } from '../../style/parts/button';
+import { ItemListSettingDiv } from '../../style/inventory/itemList';
+import IconButton from '@material-ui/core/IconButton';
+import RefreshIcon from '@material-ui/icons/Refresh';
+import Switch from '@material-ui/core/Switch';
+import Chip from '@material-ui/core/Chip';
 
-export default class ItemList extends React.Component {
+export default class ItemListSetting extends React.Component {
+
+  handleChange() {
+    const {
+      changeToGridView, changeToListView, itemList,
+    } = this.props;
+    (itemList.howToDisplay === 'list')
+      ? changeToGridView()
+      : changeToListView();
+  };
+
+  createTagList() {
+    const {
+      itemList, changeList, clearChangeList,
+    } = this.props;
+    const tagList = itemList.editTags.list.map(tag => {
+      const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
+      const chipColor = (isChecked ? 'primary' : '');
+      return (
+        <Chip
+          label={tag}
+          onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+          color={chipColor}
+          clickable={true}
+        />
+      )
+    });
+    return tagList;
+  }
 
   render() {
-    const { changeToGridView, changeToListView, itemList } = this.props;
-    if (!itemList.list) return LOADING.S;
+    const {
+      clearEditTags, changeTileWith,
+    } = this.props;
     return (
-      <div>
-        {/* <SettingButton>
-          {ITEM_COLUMN.IMAGE}
-        </SettingButton>
-        <SettingButton>
-          {ITEM_COLUMN.TAG}
-        </SettingButton>
-        <SettingButton>
-          {ITEM_COLUMN.SHOP_NAME}
-        </SettingButton>
-        <SettingButton>
-          {ITEM_COLUMN.ITEM_URL}
-        </SettingButton>
-        <SettingButton>
-          {ITEM_COLUMN.PUBLIC_RANGE}
-        </SettingButton> */}
-      </div>
+      <ItemListSettingDiv>
+        <div>
+          grid
+          <Switch
+            value="checkedF"
+            color="default"
+            onChange={() => this.handleChange()}
+            inputProps={{ 'aria-label': 'checkbox with default color' }}
+          />
+          list
+        </div>
+        <div>
+          on Tile
+          <Switch
+            value="checkedF"
+            color="default"
+            onChange={changeTileWith}
+            inputProps={{ 'aria-label': 'checkbox with default color' }}
+          />
+          only image
+        </div>
+        <IconButton
+          color="inherit"
+          aria-label="refresh"
+          onClick={clearEditTags}
+        >
+          <RefreshIcon />
+        </IconButton>
+        {this.createTagList()}
+      </ItemListSettingDiv>
     );
   }
 }

@@ -1,9 +1,10 @@
-import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL, COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST, COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST } from "../../constants/actionTypes";
+import { CHANGE_TO_GRID_VIEW, CHANGE_TO_LIST_VIEW, COMPLETE_LOAD_ITEM_CONTENT_LIST, OPEN_ITEM_DETAIL_MODAL, CLOSE_ITEM_DETAIL_MODAL, COMPLETE_CHANGE_TO_DISPLAY_ITEM_LIST, COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST, CHANGE_TILE_WITH } from "../../constants/actionTypes";
 import { HOW_TO_DISPLAY } from "../../constants/parameter";
 import { isMobile } from "../../constants/functions";
 
 const initialState = {
   howToDisplay: (!isMobile()) ? HOW_TO_DISPLAY.LIST : HOW_TO_DISPLAY.GRID,
+  onTile: true,
   list: [],
   order: [],
   modal: {
@@ -63,6 +64,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         ...action.payload,
+      }
+
+    case CHANGE_TILE_WITH:
+      return {
+        ...state,
+        onTile: !state.onTile,
       }
 
     default:
