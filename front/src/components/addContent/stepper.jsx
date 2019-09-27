@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
+import ImageInput from '../../containers/addContent/imageInput';
 import { DivModalStatus } from '../../style/common/addContent';
 import { DivModalImagePrev, ImgModalImagePrev } from '../../style/common/modal';
 import SnackBar from './snackBars';
@@ -21,9 +22,6 @@ const useStyles = {
   instructions: {
     // marginTop: theme.spacing(1),
     // marginBottom: theme.spacing(1),
-  },
-  input: {
-    display: 'none',
   }
 };
 
@@ -48,14 +46,6 @@ const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
 
 class Setting extends React.Component {
 
-  onFileSelect(file, set) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      set({ data: reader.result });
-      return reader.result;
-    };
-    reader.readAsDataURL(file.target.files[0]);
-  }
 
   createContent() {
     const {
@@ -66,28 +56,7 @@ class Setting extends React.Component {
     switch (step) {
       case 0:
         return (
-          <DivModalImagePrev>
-            {!data || data === '' ? (
-              <div>
-                <input
-                  accept="image/*"
-                  className={classes.input}
-                  id="contained-button-file"
-                  multiple
-                  type="file"
-                  onChange={file => this.onFileSelect(file, set)}
-                />
-                <label htmlFor="contained-button-file">
-                  <Button variant="contained" component="span" className={classes.button}>
-                    Upload
-                 </Button>
-                </label>
-              </div>
-            ) : (
-                <ImgModalImagePrev alt='please select' src={data} />
-              )}
-
-          </DivModalImagePrev>
+          <ImageInput />
         );
       case 1:
         return partList.map((part) => (
