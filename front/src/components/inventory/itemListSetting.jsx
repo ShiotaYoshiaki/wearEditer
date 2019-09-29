@@ -4,7 +4,6 @@ import IconButton from '@material-ui/core/IconButton';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import Switch from '@material-ui/core/Switch';
 import Chip from '@material-ui/core/Chip';
-import { getTargetInventoryList } from '../../constants/inventry';
 
 export default class ItemListSetting extends React.Component {
 
@@ -17,36 +16,25 @@ export default class ItemListSetting extends React.Component {
       : changeToListView();
   };
 
-  createItemList() {
+  isChecked(key, value) {
     const {
-      itemList, changeList, clearChangeList,
+      itemList,
     } = this.props;
-    const targetList = getTargetInventoryList('color');
-    const colorList = targetList.map(color => {
-      const isChecked = colorList.editTags.edits.some(tagData => tagData.tag === color);
-      const chipColor = (isChecked ? 'primary' : '');
-      return (
-        <Chip
-          label={item}
-          onClick={() => (!isChecked) ? changeList('tags', color) : clearChangeList('tags', color)}
-          color={chipColor}
-          clickable={true}
-        />
-      );
-    })
+    return itemList.editTags.edits.some(item => item[key] === value);
   }
+
 
   createTagList() {
     const {
       itemList, changeList, clearChangeList,
     } = this.props;
     const tagList = itemList.editTags.list.map(tag => {
-      const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
-      const chipColor = (isChecked ? 'primary' : '');
+      // const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
+      const chipColor = (this.isChecked('tags', tag) ? 'primary' : '');
       return (
         <Chip
           label={tag}
-          onClick={() => (!isChecked) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+          onClick={() => (!this.isChecked('tags', tag)) ? changeList('tags', tag) : clearChangeList('tags', tag)}
           color={chipColor}
           clickable={true}
         />
@@ -57,7 +45,8 @@ export default class ItemListSetting extends React.Component {
 
   render() {
     const {
-      clearEditTags, changeTileWith,
+      clearEditTags, changeTileWith, itemList,
+      changeList, clearChangeList,
     } = this.props;
     return (
       <ItemListSettingDiv>
@@ -88,6 +77,18 @@ export default class ItemListSetting extends React.Component {
         >
           <RefreshIcon />
         </IconButton>
+        <div>
+          {itemList.editTags.colorList.map(color => (
+            <Chip
+              label={color}
+              onClick={() => (!this.isChecked('color', color))
+                ? changeList('color', color)
+                : clearChangeList('color', color)}
+              color={''}
+              clickable={true}
+            />
+          ))}
+        </div>
         {this.createTagList()}
       </ItemListSettingDiv>
     );

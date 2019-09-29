@@ -13,9 +13,11 @@ function* loadItemList(action) {
   const list = stubImageList;
   const order = stubImageList.map(item => item.itemId);
   const tags = getTags(list);
+  const colorList = list.map(item => item.color);
   const editTags = {
     ...state.itemList.editTags,
     list: tags,
+    colorList,
   }
   yield put({
     type: COMPLETE_LOAD_ITEM_CONTENT_LIST,

@@ -2,12 +2,10 @@ import { select, put } from 'redux-saga/effects'
 import { COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST } from '../../constants/actionTypes';
 import { getDisplayList, getTags } from './commonUtil';
 
-
 function clearEdits(editTags, column, tag, list) {
   const edits = editTags.edits.filter(tagData => {
     return tagData.tag !== tag;
-  }
-  );
+  });
   let displayList = [];
   if (Object.keys(edits).length > 0) {
     const order = list.map(item => item.itemId);
