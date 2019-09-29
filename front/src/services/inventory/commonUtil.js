@@ -23,16 +23,20 @@ export function stringSort(a, b) {
  * @param {array} list アイテムをロードした結果
  * @returns {array} 削除されていないタグ一覧
  */
-export function getTags(list) {
+export function getTags(list, key) {
   const allTags = [];
   list.forEach(itemData => {
-    itemData.tags.forEach(tagData => {
-      if (!tagData.isDeleted) allTags.push(tagData.name);
-    });
+    if (typeof itemData[key] === 'object') {
+      itemData[key].forEach(item => {
+        if (!item.isDeleted) allTags.push(item.name);
+      });
+    } else {
+      allTags.push(itemData[key]);
+    }
   });
-  const tags = allTags.filter((x, i, self) => self.indexOf(x) === i);
-  tags.sort(stringSort);
-  return tags;
+  const items = allTags.filter((x, i, self) => self.indexOf(x) === i);
+  items.sort(stringSort);
+  return items;
 }
 
 /**

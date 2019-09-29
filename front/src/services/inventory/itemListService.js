@@ -12,8 +12,8 @@ function* loadItemList(action) {
   const state = yield select();
   const list = stubImageList;
   const order = stubImageList.map(item => item.itemId);
-  const tags = getTags(list);
-  const colorList = list.map(item => item.color);
+  const tags = getTags(list, 'tags');
+  const colorList = getTags(list, 'color');
   const editTags = {
     ...state.itemList.editTags,
     list: tags,

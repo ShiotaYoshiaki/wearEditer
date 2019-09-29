@@ -16,7 +16,7 @@ function clearEdits(editTags, column, tag, list) {
     displayList = list;
   }
   const nextOrder = displayList.map(item => item.itemId);
-  const tagList = getTags(displayList);
+  const tagList = getTags(displayList, 'tags');
   return { edits, nextOrder, tagList };
 }
 
