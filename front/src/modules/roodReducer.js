@@ -6,6 +6,7 @@ import HistoryReducer from './common/historyReducer';
 import EditTagModalReducer from './common/editTagModalReducer';
 import AddContentReducer from './common/addContentReducer';
 import SettingReducer from './common/settingReducer';
+import SnackBarReducer from './common/snackBarReducer';
 
 export default {
     header: HeaderReducer,
@@ -16,4 +17,5 @@ export default {
     editTags: EditTagModalReducer,
     addContent: AddContentReducer,
     setting: SettingReducer,
+    snackBar: SnackBarReducer,
 }

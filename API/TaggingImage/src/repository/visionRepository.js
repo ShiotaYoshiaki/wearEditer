@@ -17,15 +17,10 @@ function createAnalyzeParam () {
 export async function getImageTags() {
     const param = createAnalyzeParam();
     return vision.annotate(param).then((res) => {
-        console.log('-------------res'); console.log(res);
-        console.log('-------------res.responses'); console.log(res.responses);
-        console.log('-------------res.responses'); console.log(JSON.stringify(res.responses));
-        return new Promise((resolve, reject) => {
-            console.log('-------------reject'); console.log(reject);
-            resolve(res.responses);
+                                return new Promise((resolve, reject) => {
+                        resolve(res.responses);
         })
     }).catch((e) => {
-        console.log('-------------e'); console.log(e);
-    })
+            })
 }
 

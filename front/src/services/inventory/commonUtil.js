@@ -34,8 +34,8 @@ export function getTags(list, key) {
       allTags.push(itemData[key]);
     }
   });
-  const items = allTags.filter((x, i, self) => self.indexOf(x) === i);
-  items.sort(stringSort);
+    const items = allTags.filter((x, i, self) => self.indexOf(x) === i);
+    items.sort(stringSort);
   return items;
 }
 

@@ -90,12 +90,12 @@ const useStyles2 = makeStyles(theme => ({
  * @param {boolean} param.open 開閉状態がわかるものを格納する
  * @param {function} param.closeFunc 開閉状態を閉じることができる関数を格納する
  * @param {String} param.message 表示するメッセージを格納する
- * @param {String} param.status parameter.jsのSNACK_BAR_PARAMから選ぶ
+ * @param {String} param.type parameter.jsのSNACK_BAR_PARAMから選ぶ
  */
 export default function CustomizedSnackbars(param) {
   const classes = useStyles2();
   const [open, setOpen] = React.useState(false);
-  const {status, message} = param;
+  const {type, message} = param;
   const handleClick = () => {
     setOpen(true);
   };
@@ -124,7 +124,7 @@ export default function CustomizedSnackbars(param) {
       >
         <MySnackbarContentWrapper
           onClose={handleClose}
-          variant={status}
+          variant={type}
           message={message}
         />
       </Snackbar>

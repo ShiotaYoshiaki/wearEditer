@@ -18,51 +18,52 @@ class PutTags extends React.Component {
     const {
       addContent, classes, changeTagName,
       crateTag, deleteTag, recognition,
+      snackBar, openSnackBar, closeSnackBar,
     } = this.props;
     const { tags, candidate } = addContent;
     return (
       <div>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={recognition}
-      >
-        Auto Recognition
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={recognition}
+        >
+          Auto Recognition
       </Button>
-      <br />
-      <Input
-        placeholder="Add Tag"
-        // className={classes.input}
-        inputProps={{
-          'aria-label': 'description',
-        }}
-        onChange={e => changeTagName(e.target.value)}
-        value={candidate}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={crateTag}
-      >
-        Add
+        <br />
+        <Input
+          placeholder="Add Tag"
+          // className={classes.input}
+          inputProps={{
+            'aria-label': 'description',
+          }}
+          onChange={e => changeTagName(e.target.value)}
+          value={candidate}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={crateTag}
+        >
+          Add
       </Button>
-      <br />
-      <div>
-        {tags.map((tag) => (
-          <Chip
-            label={tag}
-            className={classes.chip}
-            color={'primary'}
-            clickable={true}
-            onDelete={() => deleteTag(tag)}
-          />
-        ))}
+        <br />
+        <div>
+          {tags.map((tag) => (
+            <Chip
+              label={tag}
+              className={classes.chip}
+              color={'primary'}
+              clickable={true}
+              onDelete={() => deleteTag(tag)}
+            />
+          ))}
+        </div>
+        <SnackBar
+          status='success'
+          message='move success'
+        />
       </div>
-      <SnackBar
-        status='success'
-        message='move success'
-      />
-    </div>
     );
   }
 }

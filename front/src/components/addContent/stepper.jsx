@@ -76,7 +76,10 @@ class Setting extends React.Component {
   }
 
   render() {
-    const { classes, addContent, moveAddContentModal } = this.props;
+    const {
+      classes, addContent, moveAddContentModal,
+      save,
+    } = this.props;
     const { step } = addContent;
     const steps = getSteps();
 
@@ -107,9 +110,18 @@ class Setting extends React.Component {
                   >
                     Back
                 </Button>
-                  <Button variant="contained" color="primary" onClick={() => moveAddContentModal(step + 1)}>
-                    {step === steps.length - 1 ? 'Finish' : 'Next'}
-                  </Button>
+                  {step !== steps.length - 1 ?
+                    (
+                      <Button variant="contained" color="primary" onClick={() => moveAddContentModal(step + 1)}>
+                        Next
+                      </Button>
+                    ) : (
+                      <Button variant="contained" color="primary" onClick={save}>
+                        Finish
+                      </Button>
+                    )
+                  }
+
                 </DivModalStatus>
               </div>
             )}

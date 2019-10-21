@@ -23,26 +23,6 @@ export default class ItemListSetting extends React.Component {
     return itemList.editTags.edits.some(item => item[key] === value);
   }
 
-
-  createTagList() {
-    const {
-      itemList, changeList, clearChangeList,
-    } = this.props;
-    const tagList = itemList.editTags.list.map(tag => {
-      // const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
-      const chipColor = (this.isChecked('tags', tag) ? 'primary' : '');
-      return (
-        <Chip
-          label={tag}
-          onClick={() => (!this.isChecked('tags', tag)) ? changeList('tags', tag) : clearChangeList('tags', tag)}
-          color={chipColor}
-          clickable={true}
-        />
-      );
-    });
-    return tagList;
-  }
-
   render() {
     const {
       clearEditTags, changeTileWith, itemList,
@@ -51,24 +31,26 @@ export default class ItemListSetting extends React.Component {
     return (
       <ItemListSettingDiv>
         <div>
-          grid
+          <span>
+            grid
           <Switch
-            value="checkedF"
-            color="default"
-            onChange={() => this.handleChange()}
-            inputProps={{ 'aria-label': 'checkbox with default color' }}
-          />
-          list
-        </div>
-        <div>
-          on Tile
+              value="checkedF"
+              color="default"
+              onChange={() => this.handleChange()}
+              inputProps={{ 'aria-label': 'checkbox with default color' }}
+            />
+            list
+        </span>
+          <span>
+            on Tile
           <Switch
-            value="checkedF"
-            color="default"
-            onChange={changeTileWith}
-            inputProps={{ 'aria-label': 'checkbox with default color' }}
-          />
-          only image
+              value="checkedF"
+              color="default"
+              onChange={changeTileWith}
+              inputProps={{ 'aria-label': 'checkbox with default color' }}
+            />
+            only image
+        </span>
         </div>
         <IconButton
           color="inherit"
@@ -89,7 +71,18 @@ export default class ItemListSetting extends React.Component {
             />
           ))}
         </div>
-        {this.createTagList()}
+        {itemList.editTags.list.map(tag => {
+          // const isChecked = itemList.editTags.edits.some(tagData => tagData.tag === tag);
+          const chipColor = (this.isChecked('tags', tag) ? 'primary' : '');
+          return (
+            <Chip
+              label={tag}
+              onClick={() => (!this.isChecked('tags', tag)) ? changeList('tags', tag) : clearChangeList('tags', tag)}
+              color={chipColor}
+              clickable={true}
+            />
+          );
+        })}
       </ItemListSettingDiv>
     );
   }
