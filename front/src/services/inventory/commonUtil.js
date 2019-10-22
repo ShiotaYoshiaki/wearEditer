@@ -1,5 +1,3 @@
-import { select } from 'redux-saga/effects'
-
 /**
  * 文字列のソートを行う
  * 大文字、小文字問わない
