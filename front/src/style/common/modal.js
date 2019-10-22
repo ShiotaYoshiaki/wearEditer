@@ -51,5 +51,20 @@ export const DivModalImagePrev = styled.div`
   width: 80%;
   line-height: 10;
   border:solid 1px #000000;
+  left: 0;
+  right: 0;
+  margin: auto;
 `;
+
+export const ImgModalImagePrev = styled.img`
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+`;
+
 

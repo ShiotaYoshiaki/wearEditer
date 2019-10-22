@@ -9,7 +9,7 @@ export default class EditTagModal extends React.Component {
 
   render() {
     const {
-      editTags, taggingRequest,
+      editTags,
       closeEditTagModal,
     } = this.props;
     if(!editTags.isOpen) return "";

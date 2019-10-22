@@ -5,10 +5,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
-import Input from '@material-ui/core/Input';
 import Typography from '@material-ui/core/Typography';
+import ImageInput from '../../containers/addContent/imageInput';
+import PutTags from '../../containers/addContent/putTags';
 import { DivModalStatus } from '../../style/common/addContent';
-import { DivModalImagePrev } from '../../style/common/modal';
 
 const useStyles = {
   root: {
@@ -20,9 +20,6 @@ const useStyles = {
   instructions: {
     // marginTop: theme.spacing(1),
     // marginBottom: theme.spacing(1),
-  },
-  input: {
-    display: 'none',
   }
 };
 
@@ -48,25 +45,14 @@ const partList = ["Cap", "UpperBody", "LowerBody", 'Socks', 'Shoes'];
 class Setting extends React.Component {
 
   createContent() {
-    const { addContent, classes } = this.props;
+    const {
+      addContent, classes,
+    } = this.props;
     const { step } = addContent;
     switch (step) {
       case 0:
         return (
-          <DivModalImagePrev>
-            <input
-              accept="image/*"
-              className={classes.input}
-              id="contained-button-file"
-              multiple
-              type="file"
-            />
-            <label htmlFor="contained-button-file">
-              <Button variant="contained" component="span" className={classes.button}>
-                Upload
-          </Button>
-            </label>
-          </DivModalImagePrev>
+          <ImageInput />
         );
       case 1:
         return partList.map((part) => (
@@ -81,29 +67,7 @@ class Setting extends React.Component {
 
       case 2:
         return (
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-            // onClick={() => moveAddContentModal(step + 1)}
-            >
-              Auto Recognition
-            </Button>
-            <Input
-              placeholder="Add Tag"
-              // className={classes.input}
-              inputProps={{
-                'aria-label': 'description',
-              }}
-            />
-            <Button
-              variant="contained"
-              color="primary"
-            // onClick={() => moveAddContentModal(step + 1)}
-            >
-              Add
-            </Button>
-          </div>
+          <PutTags />
         );
 
       default:
@@ -112,7 +76,10 @@ class Setting extends React.Component {
   }
 
   render() {
-    const { classes, addContent, moveAddContentModal } = this.props;
+    const {
+      classes, addContent, moveAddContentModal,
+      save,
+    } = this.props;
     const { step } = addContent;
     const steps = getSteps();
 
@@ -143,9 +110,18 @@ class Setting extends React.Component {
                   >
                     Back
                 </Button>
-                  <Button variant="contained" color="primary" onClick={() => moveAddContentModal(step + 1)}>
-                    {step === steps.length - 1 ? 'Finish' : 'Next'}
-                  </Button>
+                  {step !== steps.length - 1 ?
+                    (
+                      <Button variant="contained" color="primary" onClick={() => moveAddContentModal(step + 1)}>
+                        Next
+                      </Button>
+                    ) : (
+                      <Button variant="contained" color="primary" onClick={save}>
+                        Finish
+                      </Button>
+                    )
+                  }
+
                 </DivModalStatus>
               </div>
             )}

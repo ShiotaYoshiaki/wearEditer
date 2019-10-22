@@ -2,12 +2,10 @@ import { select, put } from 'redux-saga/effects'
 import { COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST } from '../../constants/actionTypes';
 import { getDisplayList, getTags } from './commonUtil';
 
-
 function clearEdits(editTags, column, tag, list) {
   const edits = editTags.edits.filter(tagData => {
     return tagData.tag !== tag;
-  }
-  );
+  });
   let displayList = [];
   if (Object.keys(edits).length > 0) {
     const order = list.map(item => item.itemId);
@@ -18,8 +16,9 @@ function clearEdits(editTags, column, tag, list) {
     displayList = list;
   }
   const nextOrder = displayList.map(item => item.itemId);
-  const tagList = getTags(displayList);
-  return { edits, nextOrder, tagList };
+  const tagList = getTags(displayList, 'tags');
+  const colorList = getTags(displayList, 'color');
+  return { edits, nextOrder, tagList, colorList };
 }
 
 /**
@@ -30,7 +29,7 @@ function* run(action) {
   const state = yield select();
   const { column, tag } = action.payload;
   const { editTags, list } = state.itemList;
-  const { edits, nextOrder, tagList } = clearEdits(editTags, column, tag, list);
+  const { edits, nextOrder, tagList, colorList } = clearEdits(editTags, column, tag, list);
   yield put({
     type: COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST,
     payload: {
@@ -38,6 +37,7 @@ function* run(action) {
         ...editTags,
         edits,
         list: tagList,
+        colorList,
       },
       order: nextOrder,
     }

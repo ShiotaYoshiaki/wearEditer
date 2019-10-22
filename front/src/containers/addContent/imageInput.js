@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as addContentModule from '../../modules/common/addContentAction';
-import addContentModal from '../../components/common/addContentModal';
+import imageInput from '../../components/addContent/imageInput';
 
 
 function mapStateToProps(state) {
@@ -11,8 +11,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    close: () => dispatch(addContentModule.closeAddContentModal()),
+    set: item => dispatch(addContentModule.setAddContentModal(item)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(addContentModal);
+export default connect(mapStateToProps, mapDispatchToProps)(imageInput);

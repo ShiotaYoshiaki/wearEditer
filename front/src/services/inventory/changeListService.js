@@ -22,9 +22,14 @@ function refineList(displayList, column, tag) {
 function editTagInfo(displayList, editTags, column, tag) {
   const edits = editTags.edits;
   edits.push({ column, tag });
-  const list = getTags(displayList);
-  // list.sort();
-  return { edits, list };
+  const list = getTags(displayList, 'tags');
+  const colorList = getTags(displayList, 'color');
+  return {
+    ...editTags,
+    edits,
+    list,
+    colorList,
+  };
 }
 
 /**

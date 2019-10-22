@@ -1,6 +1,5 @@
 import React from 'react';
-import { ModalDiv, OutModalDiv, ModalTitleDiv, DivModalContent } from '../../style/common/modal';
-import { MODAL } from '../../constants/parameter';
+import { ModalDiv, OutModalDiv, DivModalContent } from '../../style/common/modal';
 import { ModalCloseButton } from '../../style/parts/button';
 import closeImage from '../../style/image/closeXonly.svg';
 import { ModalCloseImg } from '../../style/parts/img';
@@ -11,20 +10,17 @@ export default class AddContentModal extends React.Component {
   render() {
     const {
       addContent,
-      closeAddContent,
+      close,
     } = this.props;
     if (!addContent.isOpen) return "";
     return (
       <div>
         <OutModalDiv />
         <ModalDiv>
-          <ModalTitleDiv>
-            {MODAL.ADD_CONTENT}
-          </ModalTitleDiv>
           <DivModalContent>
             <Stepper />
           </DivModalContent>
-          <ModalCloseButton onClick={closeAddContent} >
+          <ModalCloseButton onClick={close} >
             <ModalCloseImg src={closeImage} />
           </ModalCloseButton>
         </ModalDiv>

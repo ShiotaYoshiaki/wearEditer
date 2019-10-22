@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import * as addContentModule from '../../modules/common/addContentAction';
 import * as snackBarActon from '../../modules/common/snackBarActon';
-import stepper from '../../components/addContent/stepper';
+import putTags from '../../components/addContent/putTags';
 
 
 function mapStateToProps(state) {
@@ -20,8 +20,9 @@ function mapDispatchToProps(dispatch) {
     deleteTag: tag => dispatch(addContentModule.deleteTagAddContentModal(tag)),
     set: item => dispatch(addContentModule.setAddContentModal(item)),
     recognition: () => dispatch(addContentModule.recognition()),
-    save: () => dispatch(addContentModule.saveAddContent()),
+    openSnackBar: (type, message) => dispatch(snackBarActon.openSnackBar(type, message)),
+    closeSnackBar: () => dispatch(snackBarActon.closeSnackBar()),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(stepper);
+export default connect(mapStateToProps, mapDispatchToProps)(putTags);

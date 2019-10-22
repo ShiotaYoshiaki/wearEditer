@@ -1,7 +1,5 @@
 import React from 'react';
 import xImage from '../../style/image/Xmark.svg';
-import closeImage from '../../style/image/close.svg';
-import { HeaderSideTavDiv } from '../../style/common/sideTab';
 import { AddContentDiv } from '../../style/common/addContent';
 import { AddContentImg, CloseContentImg } from '../../style/parts/img';
 import { AddContentButton } from '../../style/parts/button';
