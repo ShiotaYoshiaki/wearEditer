@@ -25,6 +25,7 @@ function* loadItemList(action) {
       list,
       order,
       tags,
+      colors: colorList,
       editTags,
     }
   })

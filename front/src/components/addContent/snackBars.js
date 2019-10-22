@@ -128,26 +128,6 @@ export default function CustomizedSnackbars(param) {
           message={message}
         />
       </Snackbar>
-      {/* <MySnackbarContentWrapper
-        variant="error"
-        className={classes.margin}
-        message="This is an error message!"
-      />
-      <MySnackbarContentWrapper
-        variant="warning"
-        className={classes.margin}
-        message="This is a warning message!"
-      />
-      <MySnackbarContentWrapper
-        variant="info"
-        className={classes.margin}
-        message="This is an information message!"
-      />
-      <MySnackbarContentWrapper
-        variant="success"
-        className={classes.margin}
-        message="This is a success message!"
-      /> */}
     </div>
   );
 }

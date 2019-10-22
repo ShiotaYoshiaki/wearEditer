@@ -17,7 +17,8 @@ function clearEdits(editTags, column, tag, list) {
   }
   const nextOrder = displayList.map(item => item.itemId);
   const tagList = getTags(displayList, 'tags');
-  return { edits, nextOrder, tagList };
+  const colorList = getTags(displayList, 'color');
+  return { edits, nextOrder, tagList, colorList };
 }
 
 /**
@@ -28,7 +29,7 @@ function* run(action) {
   const state = yield select();
   const { column, tag } = action.payload;
   const { editTags, list } = state.itemList;
-  const { edits, nextOrder, tagList } = clearEdits(editTags, column, tag, list);
+  const { edits, nextOrder, tagList, colorList } = clearEdits(editTags, column, tag, list);
   yield put({
     type: COMPLETE_CLEAR_EDIT_TAG_ITEM_LIST,
     payload: {
@@ -36,6 +37,7 @@ function* run(action) {
         ...editTags,
         edits,
         list: tagList,
+        colorList,
       },
       order: nextOrder,
     }
