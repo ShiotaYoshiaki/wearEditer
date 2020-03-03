@@ -14,4 +14,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+console.log('git test');
+
 register();
